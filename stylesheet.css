@@ -1,0 +1,33 @@
+/* stylesheet.css - minimal styles for yrtimer */
+
+/* Optional: adjust label spacing in the panel */
+.yrtimer-entry {
+  min-width: 180px;
+}
+
+/* Ensure timer text in the panel has some spacing and stays readable */
+.yrtimer-label {
+  /* inherit panel font for homogeneous look with the date */
+  padding-left: 0;
+}
+
+/* Container spacing similar to Vitals indicator */
+.yrtimer-box {
+  /* compact spacing like Vitals */
+  spacing: 4px;
+}
+
+/* Visual states for the indicator */
+.state-idle {
+  color: inherit; /* neutral */
+}
+
+.state-running {
+  /* accent color for running */
+  color: #4caf50;
+}
+
+.state-paused {
+  /* warning color for paused */
+  color: #ffb300;
+}

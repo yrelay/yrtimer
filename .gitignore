@@ -1,0 +1,10 @@
+# Build artifacts
+schemas/gschemas.compiled
+*.shell-extension.zip
+
+# Working directories (do not publish)
+work/
+
+.last-enable
+
+dist/

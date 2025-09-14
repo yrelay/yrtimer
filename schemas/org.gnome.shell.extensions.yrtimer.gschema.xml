@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.yrtimer" path="/org/gnome/shell/extensions/yrtimer/">
+    <key name="presets" type="ai">
+      <default>[300, 600, 1500]</default>
+      <summary>Timer presets in seconds</summary>
+      <description>List of preset durations in seconds (e.g., 300=5min, 1500=25min)</description>
+    </key>
+
+    <key name="default-sound" type="s">
+      <default>'bell.oga'</default>
+      <summary>Default sound file</summary>
+      <description>Default sound to play on timer completion; set to 'off' to disable</description>
+    </key>
+
+    <key name="volume" type="i">
+      <default>80</default>
+      <summary>Sound volume percent</summary>
+      <description>Volume percentage [0..100] for sounds (when supported)</description>
+    </key>
+
+    <key name="panel-style" type="s">
+      <default>'both'</default>
+      <summary>Panel display style</summary>
+      <description>Display style in the top bar: 'icon', 'text', or 'both'</description>
+    </key>
+
+    <key name="display-format" type="s">
+      <default>'auto'</default>
+      <summary>Time display format</summary>
+      <description>Time format: 'auto', 'mm:ss', 'hh:mm:ss', 'hide-hours-if-zero'</description>
+    </key>
+
+    <!-- Panel positioning like Vitals: 0=left, 1=center, 2=right, 3=far-left, 4=far-right -->
+    <key name="position-in-panel" type="i">
+      <default>2</default>
+      <summary>Position in top panel</summary>
+      <description>0=left, 1=center, 2=right, 3=far-left, 4=far-right</description>
+    </key>
+
+    <!-- Compact spacing (pixels) between icon and text in the panel -->
+    <key name="panel-spacing" type="i">
+      <default>4</default>
+      <summary>Panel spacing</summary>
+      <description>Spacing in pixels between icon and text in the top panel</description>
+    </key>
+
+    <key name="enable-notification" type="b">
+      <default>true</default>
+      <summary>Enable notifications</summary>
+      <description>Show a notification when the timer elapses</description>
+    </key>
+
+    <key name="enable-sound" type="b">
+      <default>true</default>
+      <summary>Enable sound</summary>
+      <description>Play a sound when the timer elapses (if available)</description>
+    </key>
+
+    <!-- Debug mode: enables extra logs and optional informative toasts -->
+    <key name="debug" type="b">
+      <default>false</default>
+      <summary>Enable debug mode</summary>
+      <description>When true, enables additional debugging logs and surfaces the Diagnostics tab.</description>
+    </key>
+
+    <key name="repeat-enabled" type="b">
+      <default>false</default>
+      <summary>Enable repetition</summary>
+      <description>Repeat notification/sound after elapse</description>
+    </key>
+
+    <key name="repeat-count" type="i">
+      <default>0</default>
+      <summary>Repeat count</summary>
+      <description>How many times to repeat after first elapse (0 to disable)</description>
+    </key>
+
+    <key name="repeat-interval-seconds" type="i">
+      <default>10</default>
+      <summary>Repeat interval seconds</summary>
+      <description>Interval in seconds between repetitions</description>
+    </key>
+
+    <key name="last-state" type="s">
+      <default>''</default>
+      <summary>Last serialized state</summary>
+      <description>Compact JSON string with last state for restoration</description>
+    </key>
+
+    <!-- Show Diagnostics page in preferences (hidden by default) -->
+    <key name="show-diagnostics" type="b">
+      <default>false</default>
+      <summary>Show Diagnostics page in preferences</summary>
+      <description>Controls whether the Diagnostics tab is visible in the preferences window. Intended for debugging or support scenarios.</description>
+    </key>
+
+    <!-- Override locale for preferences/debugging: empty string = system default -->
+    <key name="override-locale" type="s">
+      <default>''</default>
+      <summary>Override locale for preferences</summary>
+      <description>When non-empty, forces the preferences UI to use this locale (e.g., 'fr', 'de', 'zh_CN'). Empty string means use the system locale.</description>
+    </key>
+  </schema>
+</schemalist>

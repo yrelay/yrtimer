@@ -1,0 +1,383 @@
+# Spanish translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-14 10:28+0200\n"
+"PO-Revision-Date: 2025-09-10 20:48+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: extension.js:44
+msgid "getSettings failed"
+msgstr ""
+
+#: extension.js:66
+msgid "Indicator add failed"
+msgstr ""
+
+#: extension.js:87
+msgid "State restore wired"
+msgstr ""
+
+#: extension.js:92
+msgid "restore/persist failed"
+msgstr ""
+
+#: prefs.js:80 prefs.js:81 prefs.js:542 prefs.js:543
+msgid "About"
+msgstr "Acerca de"
+
+#: prefs.js:82 prefs.js:546
+msgid ""
+"For feature requests or bug reports, please visit GitHub. No warranty, "
+"express or implied."
+msgstr ""
+"Para solicitar funciones o informar errores, visite GitHub. Sin garantías, "
+"expresas ni implícitas."
+
+#: prefs.js:88 prefs.js:553
+msgid "GitHub"
+msgstr "GitHub"
+
+#: prefs.js:89 prefs.js:554
+msgid "Issues"
+msgstr "Incidencias"
+
+#: prefs.js:90 prefs.js:555
+msgid "Donate"
+msgstr "Donar"
+
+#: prefs.js:105 prefs_pages/general.js:13
+msgid "General"
+msgstr "General"
+
+#: prefs.js:108 prefs_pages/general.js:15
+msgid "Notifications & Sound"
+msgstr "Notificaciones y sonido"
+
+#: prefs.js:110 prefs_pages/general.js:17
+msgid "Enable notifications"
+msgstr "Habilitar notificaciones"
+
+#: prefs.js:118 prefs_pages/general.js:25
+msgid "Enable sound"
+msgstr "Habilitar sonido"
+
+#: prefs.js:126 prefs_pages/general.js:33
+msgid "Volume"
+msgstr "Volumen"
+
+#: prefs.js:137 prefs_pages/general.js:44
+msgid "Custom sound path (relative or absolute)"
+msgstr "Ruta de sonido personalizada (relativa o absoluta)"
+
+#: prefs.js:146 prefs_pages/general.js:175
+msgid "Sound"
+msgstr "Sonido"
+
+#: prefs.js:170 prefs_pages/general.js:72
+msgid "System: complete"
+msgstr "Sistema: completo"
+
+#: prefs.js:171 prefs_pages/general.js:73
+msgid "System: bell"
+msgstr "Sistema: campana"
+
+#: prefs.js:172 prefs_pages/general.js:74
+msgid "System: message-new-instant"
+msgstr "Sistema: mensaje nuevo instantáneo"
+
+#: prefs.js:173 prefs_pages/general.js:75
+msgid "System: dialog-information"
+msgstr "Sistema: diálogo de información"
+
+#: prefs.js:174 prefs_pages/general.js:76
+msgid "System: alarm-clock-elapsed"
+msgstr "Sistema: alarma vencida"
+
+#: prefs.js:177 prefs.js:249 prefs_pages/general.js:79
+#: prefs_pages/general.js:135
+msgid "Custom…"
+msgstr "Personalizado…"
+
+#: prefs.js:212 prefs_pages/general.js:108
+msgid "Preview"
+msgstr "Vista previa"
+
+#: prefs.js:230 prefs_pages/general.js:116
+msgid "Sound preview"
+msgstr ""
+
+#: prefs.js:255 prefs.js:296 prefs_pages/general.js:140
+msgid "Select sound file"
+msgstr "Seleccionar archivo de sonido"
+
+#: prefs.js:261 prefs.js:304 prefs_pages/general.js:142
+msgid "Audio"
+msgstr "Audio"
+
+#: prefs.js:301
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: prefs.js:302
+msgid "_Open"
+msgstr "_Abrir"
+
+#: prefs.js:347 ui/indicator.js:647 ui/indicator.js:650
+#: prefs_pages/general.js:181
+msgid "Reset"
+msgstr "Restablecer"
+
+#: prefs.js:348 prefs_pages/general.js:182
+msgid "Restore all settings to schema defaults"
+msgstr "Restaurar todos los valores predeterminados del esquema"
+
+#: prefs.js:349 prefs_pages/general.js:183
+msgid "Restore all defaults"
+msgstr "Restaurar todos los valores predeterminados"
+
+#: prefs.js:412 prefs.js:413 prefs_pages/panel.js:11 prefs_pages/panel.js:12
+msgid "Panel & Display"
+msgstr "Panel y Pantalla"
+
+#: prefs.js:415 prefs_pages/panel.js:14
+msgid "Panel style (icon/text/both)"
+msgstr "Estilo del panel (icono/texto/ambos)"
+
+#: prefs.js:423 prefs_pages/panel.js:22
+msgid "Display format"
+msgstr "Formato de visualización"
+
+#: prefs.js:432 prefs_pages/panel.js:30
+msgid "Position in panel"
+msgstr "Posición en el panel"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Left"
+msgstr "Izquierda"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Center"
+msgstr "Centro"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Right"
+msgstr "Derecha"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Far left"
+msgstr "Extrema izquierda"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Far right"
+msgstr "Extrema derecha"
+
+#: prefs.js:444
+msgid "Panel spacing (px)"
+msgstr "Espaciado del panel (px)"
+
+#: prefs.js:457 ui/indicator.js:275 ui/indicator.js:532 ui/indicator.js:673
+#: ui/indicator.js:675 prefs_pages/presets.js:11
+msgid "Presets"
+msgstr "Preajustes"
+
+#: prefs.js:458 prefs_pages/presets.js:12
+msgid "Presets (comma-separated)"
+msgstr "Preajustes (separados por comas)"
+
+#: prefs.js:459 prefs_pages/presets.js:13
+msgid ""
+"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
+msgstr ""
+"Admite el sufijo m/s; números sin sufijo = minutos. Ejemplos: 1s, 4m, 5m, "
+"10, 25"
+
+#: prefs.js:470 prefs_pages/presets.js:20
+msgid "Save"
+msgstr "Guardar"
+
+#: prefs.js:493 prefs_pages/repeat.js:11
+msgid "Repetition"
+msgstr "Repetición"
+
+#: prefs.js:494 prefs_pages/repeat.js:12
+msgid "Repetition on completion"
+msgstr "Repetir al finalizar"
+
+#: prefs.js:496 prefs_pages/repeat.js:14
+msgid "Enable repetition"
+msgstr "Habilitar repetición"
+
+#: prefs.js:504 prefs_pages/repeat.js:22
+msgid "Repeat count"
+msgstr "Número de repeticiones"
+
+#: prefs.js:510 prefs_pages/repeat.js:28
+msgid "Repeat interval (seconds)"
+msgstr "Intervalo de repetición (segundos)"
+
+#: ui/indicator.js:76 i18n/extra_strings.js:17
+msgid ""
+"Left: start/pause, Middle: reset, Shift+Left: last preset, Ctrl+Left: "
+"Preferences"
+msgstr ""
+"Izquierdo: iniciar/pausar, Medio: restablecer, Shift+Izq.: último preajuste, "
+"Ctrl+Izq.: Preferencias"
+
+#: ui/indicator.js:79 ui/indicator.js:96
+msgid "yrtimer indicator"
+msgstr "indicador yrtimer"
+
+#: ui/indicator.js:94
+msgid "Timer icon"
+msgstr "Icono del temporizador"
+
+#: ui/indicator.js:95
+msgid "Remaining time"
+msgstr "Tiempo restante"
+
+#: ui/indicator.js:275 ui/indicator.js:533 ui/indicator.js:681
+#: ui/indicator.js:683
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: ui/indicator.js:277
+msgid "[i18n probe] Preferences"
+msgstr "[i18n] Preferencias"
+
+#: ui/indicator.js:306
+msgid "Preset"
+msgstr "Preajuste"
+
+#: ui/indicator.js:359 ui/indicator.js:368
+msgid "Timer"
+msgstr "Temporizador"
+
+#: ui/indicator.js:359 ui/indicator.js:368
+msgid "Time is up!"
+msgstr "¡Se acabó el tiempo!"
+
+#: ui/indicator.js:544
+msgid "Enter duration (e.g., 1m 12s)"
+msgstr "Introduzca la duración (p. ej., 1m 12s)"
+
+#: ui/indicator.js:546
+msgid "Duration input"
+msgstr "Entrada de duración"
+
+#: ui/indicator.js:645 ui/indicator.js:648
+msgid "Start"
+msgstr "Iniciar"
+
+#: ui/indicator.js:646 ui/indicator.js:649
+msgid "Pause"
+msgstr "Pausar"
+
+#: prefs_pages/diag.js:12 prefs_pages/diag.js:15
+msgid "Diagnostics"
+msgstr "Diagnóstico"
+
+#: prefs_pages/diag.js:17
+msgid "Enable debug logs"
+msgstr "Habilitar registros de depuración"
+
+#: prefs_pages/diag.js:26
+msgid "Override locale for preferences"
+msgstr "Ignorar la configuración regional para las preferencias"
+
+#: prefs_pages/diag.js:26
+msgid "Empty = system default (restart prefs to fully apply)"
+msgstr ""
+"Vacío = predeterminado del sistema (reinicia las preferencias para aplicar "
+"por completo)"
+
+#: prefs_pages/diag.js:27 prefs_pages/diag.js:44
+msgid "System default"
+msgstr "Predeterminado del sistema"
+
+#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
+msgid "Language changed"
+msgstr "Idioma cambiado"
+
+#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
+msgid "Restarting preferences to apply translations..."
+msgstr "Reiniciando las preferencias para aplicar las traducciones..."
+
+#: prefs_pages/diag.js:59 prefs_pages/diag.js:87 prefs_pages/diag.js:222
+msgid "OK"
+msgstr "Aceptar"
+
+#: prefs_pages/diag.js:81
+msgid "e.g., fr, de, zh_CN"
+msgstr "e.g., fr, de, zh_CN"
+
+#: prefs_pages/diag.js:113 prefs_pages/diag.js:166
+msgid "Extension path"
+msgstr "Ruta de la extensión"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "Icon (embedded)"
+msgstr "Icono (integrado)"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "exists"
+msgstr "existe"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "missing"
+msgstr "falta"
+
+#: prefs_pages/diag.js:123 prefs_pages/diag.js:196
+msgid "presets (sec)"
+msgstr "preajustes (s)"
+
+#: prefs_pages/diag.js:136
+msgid "Status and environment checks (Press Refresh to update)"
+msgstr "Comprobaciones de estado y entorno (Pulse Actualizar para actualizar)"
+
+#: prefs_pages/diag.js:161
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: prefs_pages/diag.js:172
+msgid "GNOME Shell"
+msgstr "GNOME Shell"
+
+#: prefs_pages/diag.js:182
+msgid "Extension state"
+msgstr "Estado de la extensión"
+
+#: prefs_pages/diag.js:184
+msgid "Extension info"
+msgstr "Información de la extensión"
+
+#: prefs_pages/diag.js:210
+msgid "Copy"
+msgstr "Copiar"
+
+#: prefs_pages/diag.js:221
+msgid "Diagnostics copied"
+msgstr "Diagnóstico copiado"
+
+#: prefs_pages/diag.js:221
+msgid "Diagnostics have been copied to the clipboard."
+msgstr "El diagnóstico se ha copiado al portapapeles."
+
+#: prefs_pages/general.js:69
+msgid "Embedded"
+msgstr ""
+
+#: prefs_pages/general.js:81
+msgid "(no sounds found)"
+msgstr ""

@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gjs libglib2.0-bin gettext zip
+
+      - name: Run unit tests (GJS)
+        working-directory: .
+        run: make test
+
+      - name: Build package (zip -> dist/)
+        working-directory: .
+        run: make pack
+
+      - name: Upload artifact (extension zip)
+        uses: actions/upload-artifact@v4
+        with:
+          name: yrtimer-shell-extension
+          path: |
+            dist/*.shell-extension.zip
+          if-no-files-found: error

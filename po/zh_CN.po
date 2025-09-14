@@ -1,0 +1,375 @@
+# Chinese translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-14 10:28+0200\n"
+"PO-Revision-Date: 2025-09-10 20:48+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: extension.js:44
+msgid "getSettings failed"
+msgstr ""
+
+#: extension.js:66
+msgid "Indicator add failed"
+msgstr ""
+
+#: extension.js:87
+msgid "State restore wired"
+msgstr ""
+
+#: extension.js:92
+msgid "restore/persist failed"
+msgstr ""
+
+#: prefs.js:80 prefs.js:81 prefs.js:542 prefs.js:543
+msgid "About"
+msgstr "关于"
+
+#: prefs.js:82 prefs.js:546
+msgid ""
+"For feature requests or bug reports, please visit GitHub. No warranty, "
+"express or implied."
+msgstr "对于功能请求或错误报告，请访问 GitHub。概不提供任何明示或暗示的保证。"
+
+#: prefs.js:88 prefs.js:553
+msgid "GitHub"
+msgstr "GitHub"
+
+#: prefs.js:89 prefs.js:554
+msgid "Issues"
+msgstr "问题"
+
+#: prefs.js:90 prefs.js:555
+msgid "Donate"
+msgstr "捐赠"
+
+#: prefs.js:105 prefs_pages/general.js:13
+msgid "General"
+msgstr "常规"
+
+#: prefs.js:108 prefs_pages/general.js:15
+msgid "Notifications & Sound"
+msgstr "通知与声音"
+
+#: prefs.js:110 prefs_pages/general.js:17
+msgid "Enable notifications"
+msgstr "启用通知"
+
+#: prefs.js:118 prefs_pages/general.js:25
+msgid "Enable sound"
+msgstr "启用声音"
+
+#: prefs.js:126 prefs_pages/general.js:33
+msgid "Volume"
+msgstr "音量"
+
+#: prefs.js:137 prefs_pages/general.js:44
+msgid "Custom sound path (relative or absolute)"
+msgstr "自定义声音路径（相对或绝对）"
+
+#: prefs.js:146 prefs_pages/general.js:175
+msgid "Sound"
+msgstr "声音"
+
+#: prefs.js:170 prefs_pages/general.js:72
+msgid "System: complete"
+msgstr "系统：完成"
+
+#: prefs.js:171 prefs_pages/general.js:73
+msgid "System: bell"
+msgstr "系统：铃声"
+
+#: prefs.js:172 prefs_pages/general.js:74
+msgid "System: message-new-instant"
+msgstr "系统：新即时消息"
+
+#: prefs.js:173 prefs_pages/general.js:75
+msgid "System: dialog-information"
+msgstr "系统：信息对话框"
+
+#: prefs.js:174 prefs_pages/general.js:76
+msgid "System: alarm-clock-elapsed"
+msgstr "系统：闹钟已到"
+
+#: prefs.js:177 prefs.js:249 prefs_pages/general.js:79
+#: prefs_pages/general.js:135
+msgid "Custom…"
+msgstr "自定义…"
+
+#: prefs.js:212 prefs_pages/general.js:108
+msgid "Preview"
+msgstr "预览"
+
+#: prefs.js:230 prefs_pages/general.js:116
+msgid "Sound preview"
+msgstr ""
+
+#: prefs.js:255 prefs.js:296 prefs_pages/general.js:140
+msgid "Select sound file"
+msgstr "选择声音文件"
+
+#: prefs.js:261 prefs.js:304 prefs_pages/general.js:142
+msgid "Audio"
+msgstr "音频"
+
+#: prefs.js:301
+msgid "_Cancel"
+msgstr "_取消"
+
+#: prefs.js:302
+msgid "_Open"
+msgstr "_打开"
+
+#: prefs.js:347 ui/indicator.js:647 ui/indicator.js:650
+#: prefs_pages/general.js:181
+msgid "Reset"
+msgstr "重置"
+
+#: prefs.js:348 prefs_pages/general.js:182
+msgid "Restore all settings to schema defaults"
+msgstr "将所有设置恢复为架构默认值"
+
+#: prefs.js:349 prefs_pages/general.js:183
+msgid "Restore all defaults"
+msgstr "恢复所有默认值"
+
+#: prefs.js:412 prefs.js:413 prefs_pages/panel.js:11 prefs_pages/panel.js:12
+msgid "Panel & Display"
+msgstr "面板与显示"
+
+#: prefs.js:415 prefs_pages/panel.js:14
+msgid "Panel style (icon/text/both)"
+msgstr "面板样式（图标/文本/两者）"
+
+#: prefs.js:423 prefs_pages/panel.js:22
+msgid "Display format"
+msgstr "显示格式"
+
+#: prefs.js:432 prefs_pages/panel.js:30
+msgid "Position in panel"
+msgstr "面板位置"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Left"
+msgstr "左"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Center"
+msgstr "中"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Right"
+msgstr "右"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Far left"
+msgstr "最左"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Far right"
+msgstr "最右"
+
+#: prefs.js:444
+msgid "Panel spacing (px)"
+msgstr "面板间距 (px)"
+
+#: prefs.js:457 ui/indicator.js:275 ui/indicator.js:532 ui/indicator.js:673
+#: ui/indicator.js:675 prefs_pages/presets.js:11
+msgid "Presets"
+msgstr "预设"
+
+#: prefs.js:458 prefs_pages/presets.js:12
+msgid "Presets (comma-separated)"
+msgstr "预设（以逗号分隔）"
+
+#: prefs.js:459 prefs_pages/presets.js:13
+msgid ""
+"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
+msgstr "支持 m/s 后缀；纯数字=分钟。示例：1s、4m、5m、10、25"
+
+#: prefs.js:470 prefs_pages/presets.js:20
+msgid "Save"
+msgstr "保存"
+
+#: prefs.js:493 prefs_pages/repeat.js:11
+msgid "Repetition"
+msgstr "重复"
+
+#: prefs.js:494 prefs_pages/repeat.js:12
+msgid "Repetition on completion"
+msgstr "完成后重复"
+
+#: prefs.js:496 prefs_pages/repeat.js:14
+msgid "Enable repetition"
+msgstr "启用重复"
+
+#: prefs.js:504 prefs_pages/repeat.js:22
+msgid "Repeat count"
+msgstr "重复次数"
+
+#: prefs.js:510 prefs_pages/repeat.js:28
+msgid "Repeat interval (seconds)"
+msgstr "重复间隔（秒）"
+
+#: ui/indicator.js:76 i18n/extra_strings.js:17
+msgid ""
+"Left: start/pause, Middle: reset, Shift+Left: last preset, Ctrl+Left: "
+"Preferences"
+msgstr "左键：开始/暂停，中键：重置，Shift+左键：上一个预设，Ctrl+左键：首选项"
+
+#: ui/indicator.js:79 ui/indicator.js:96
+msgid "yrtimer indicator"
+msgstr "yrtimer 指示器"
+
+#: ui/indicator.js:94
+msgid "Timer icon"
+msgstr "计时器图标"
+
+#: ui/indicator.js:95
+msgid "Remaining time"
+msgstr "剩余时间"
+
+#: ui/indicator.js:275 ui/indicator.js:533 ui/indicator.js:681
+#: ui/indicator.js:683
+msgid "Preferences"
+msgstr "首选项"
+
+#: ui/indicator.js:277
+msgid "[i18n probe] Preferences"
+msgstr "[i18n] 首选项"
+
+#: ui/indicator.js:306
+msgid "Preset"
+msgstr "预设"
+
+#: ui/indicator.js:359 ui/indicator.js:368
+msgid "Timer"
+msgstr "计时器"
+
+#: ui/indicator.js:359 ui/indicator.js:368
+msgid "Time is up!"
+msgstr "时间到！"
+
+#: ui/indicator.js:544
+msgid "Enter duration (e.g., 1m 12s)"
+msgstr "输入时长（例如：1m 12s）"
+
+#: ui/indicator.js:546
+msgid "Duration input"
+msgstr "时长输入"
+
+#: ui/indicator.js:645 ui/indicator.js:648
+msgid "Start"
+msgstr "开始"
+
+#: ui/indicator.js:646 ui/indicator.js:649
+msgid "Pause"
+msgstr "暂停"
+
+#: prefs_pages/diag.js:12 prefs_pages/diag.js:15
+msgid "Diagnostics"
+msgstr "诊断"
+
+#: prefs_pages/diag.js:17
+msgid "Enable debug logs"
+msgstr "启用调试日志"
+
+#: prefs_pages/diag.js:26
+msgid "Override locale for preferences"
+msgstr "覆盖首选项的语言环境"
+
+#: prefs_pages/diag.js:26
+msgid "Empty = system default (restart prefs to fully apply)"
+msgstr "为空＝系统默认（重新启动首选项以完全应用）"
+
+#: prefs_pages/diag.js:27 prefs_pages/diag.js:44
+msgid "System default"
+msgstr "系统默认"
+
+#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
+msgid "Language changed"
+msgstr "语言已更改"
+
+#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
+msgid "Restarting preferences to apply translations..."
+msgstr "正在重新启动首选项以应用翻译..."
+
+#: prefs_pages/diag.js:59 prefs_pages/diag.js:87 prefs_pages/diag.js:222
+msgid "OK"
+msgstr "确定"
+
+#: prefs_pages/diag.js:81
+msgid "e.g., fr, de, zh_CN"
+msgstr "e.g., fr, de, zh_CN"
+
+#: prefs_pages/diag.js:113 prefs_pages/diag.js:166
+msgid "Extension path"
+msgstr "扩展路径"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "Icon (embedded)"
+msgstr "图标（内置）"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "exists"
+msgstr "存在"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "missing"
+msgstr "缺失"
+
+#: prefs_pages/diag.js:123 prefs_pages/diag.js:196
+msgid "presets (sec)"
+msgstr "预设（秒）"
+
+#: prefs_pages/diag.js:136
+msgid "Status and environment checks (Press Refresh to update)"
+msgstr "状态与环境检查（点击“刷新”以更新）"
+
+#: prefs_pages/diag.js:161
+msgid "Refresh"
+msgstr "刷新"
+
+#: prefs_pages/diag.js:172
+msgid "GNOME Shell"
+msgstr "GNOME Shell"
+
+#: prefs_pages/diag.js:182
+msgid "Extension state"
+msgstr "扩展状态"
+
+#: prefs_pages/diag.js:184
+msgid "Extension info"
+msgstr "扩展信息"
+
+#: prefs_pages/diag.js:210
+msgid "Copy"
+msgstr "复制"
+
+#: prefs_pages/diag.js:221
+msgid "Diagnostics copied"
+msgstr "诊断已复制"
+
+#: prefs_pages/diag.js:221
+msgid "Diagnostics have been copied to the clipboard."
+msgstr "诊断已复制到剪贴板。"
+
+#: prefs_pages/general.js:69
+msgid "Embedded"
+msgstr ""
+
+#: prefs_pages/general.js:81
+msgid "(no sounds found)"
+msgstr ""
