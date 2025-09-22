@@ -1,17 +1,28 @@
-// prefs/general.js - General (Notifications & Sound)
-const { Adw, Gtk, Gio, GLib } = imports.gi;
-const Gettext = imports.gettext;
-const ExtensionUtils = imports.misc.extensionUtils;
+// ESM port — prefs_pages/general.js (GNOME Shell 45+, Adw/Gtk4)
 
-function buildGeneralPage(settings) {
-  const Me = ExtensionUtils.getCurrentExtension();
+import Adw from 'gi://Adw?version=1';
+import Gtk from 'gi://Gtk?version=4.0';
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
+import Gettext from 'gettext';
+
+// Do NOT import core/notifier.js here: it depends on Shell-only modules (Main/MessageTray)
+// which are unavailable in the standalone preferences process.
+
+export function buildGeneralPage(settings) {
+  function _getRootPathFromMeta() {
+    try {
+      const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/general.js
+      const dir = file.get_parent(); // prefs_pages/
+      const root = dir.get_parent(); // extension root
+      return root.get_path();
+    } catch (_) { return ''; }
+  }
+  const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
   let _ = (s) => s;
   try { _ = Gettext.domain(Me.metadata['gettext-domain'] || 'yrtimer').gettext; } catch (_) {}
-  let Notifier = null;
-  try { Notifier = Me.imports.core.notifier.Notifier; } catch (_) {}
 
   const pageGeneral = new Adw.PreferencesPage({ title: _('General'), icon_name: 'preferences-system-symbolic' });
-
   const grpNotify = new Adw.PreferencesGroup({ title: _('Notifications & Sound') });
 
   const rowNotif = new Adw.ActionRow({ title: _('Enable notifications') });
@@ -40,7 +51,6 @@ function buildGeneralPage(settings) {
   rowVolume.add_suffix(scaleVolume);
   grpNotify.add(rowVolume);
 
-  // Default sound filename (hidden unless Custom… is selected)
   const rowDefSound = new Adw.ActionRow({ title: _('Custom sound path (relative or absolute)') });
   const entrySound = new Gtk.Entry({ hexpand: true });
   entrySound.set_text(settings.get_string('default-sound'));
@@ -49,7 +59,6 @@ function buildGeneralPage(settings) {
   grpNotify.add(rowDefSound);
   try { rowDefSound.set_visible(false); } catch (_) {}
 
-  // Sound choices discovery
   const soundChoices = [];
   const pushIfExists = (label, pathOrName) => {
     try {
@@ -75,7 +84,6 @@ function buildGeneralPage(settings) {
   pushIfExists(_('System: dialog-information'), '/usr/share/sounds/freedesktop/stereo/dialog-information.oga');
   pushIfExists(_('System: alarm-clock-elapsed'), '/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga');
 
-  // Custom…
   soundChoices.push([_('Custom…'), '__custom__']);
   const ddLabels = soundChoices.map(([label]) => label);
   const dd = Gtk.DropDown.new_from_strings(ddLabels.length > 0 ? ddLabels : [_('(no sounds found)')]);
@@ -107,17 +115,7 @@ function buildGeneralPage(settings) {
 
   const btnPlay = new Gtk.Button({ label: _('Preview') });
   btnPlay.connect('clicked', () => {
-    try {
-      const n = Notifier ? new Notifier(Me.path) : null;
-      const useSound = settings.get_boolean('enable-sound');
-      const vol = settings.get_int('volume');
-      let file = settings.get_string('default-sound') || 'bell.oga';
-      if (n) {
-        n.notify('yrtimer', _('Sound preview'), { enableNotification: false, enableSound: useSound, volume: vol, soundFile: file });
-        return;
-      }
-    } catch (_) {}
-    // CLI fallbacks
+    // CLI-only playback for preferences (no Shell APIs here)
     try {
       const file = settings.get_string('default-sound') || 'bell.oga';
       const path = file.startsWith('/') ? file : `${Me.path}/sounds/${file}`;
@@ -136,8 +134,7 @@ function buildGeneralPage(settings) {
   try { btnCustom.set_sensitive(true); } catch (_) {}
   btnCustom.connect('clicked', () => {
     try {
-      const window = null; // not strictly needed, native chooser without parenting
-      const chooser = new Gtk.FileChooserNative({ title: _('Select sound file'), action: Gtk.FileChooserAction.OPEN, transient_for: window, modal: true });
+      const chooser = new Gtk.FileChooserNative({ title: _('Select sound file'), action: Gtk.FileChooserAction.OPEN, transient_for: null, modal: true });
       const filter = new Gtk.FileFilter();
       filter.set_name(_('Audio'));
       filter.add_mime_type('audio/x-vorbis+ogg');
@@ -205,7 +202,7 @@ function buildGeneralPage(settings) {
         try { rowDefSound.set_visible(isCustom); } catch (_) {}
       } catch (_) {}
     } catch (e) {
-      log(`[yrtimer] prefs reset-all error: ${e}`);
+      console.warn('[yrtimer] prefs reset-all error:', e);
     }
   });
   rowResetAll.add_suffix(btnResetAll);
@@ -214,5 +211,3 @@ function buildGeneralPage(settings) {
 
   return pageGeneral;
 }
-
-var buildGeneralPage = buildGeneralPage;

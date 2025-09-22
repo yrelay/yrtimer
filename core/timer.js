@@ -1,15 +1,15 @@
-// core/timer.js (legacy imports for GNOME 43)
+// ESM port — core/timer.js (GNOME Shell 45+)
 // Timer with IDLE/RUNNING/PAUSED states and 1 Hz tick
 
-const GLib = imports.gi.GLib;
+import GLib from 'gi://GLib';
 
-var TimerState = {
+export const TimerState = {
   IDLE: 'IDLE',
   RUNNING: 'RUNNING',
   PAUSED: 'PAUSED',
 };
 
-var Timer = class Timer {
+export class Timer {
   constructor(logDebug = null) {
     this._state = TimerState.IDLE;
     this._remaining = 0; // seconds

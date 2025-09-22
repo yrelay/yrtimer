@@ -115,7 +115,7 @@ test:
 pack: schemas i18n-build
 	@echo "Packing GNOME Shell extension into $(OUT_DIR)..."
 	@mkdir -p $(OUT_DIR)
-	zip -r $(ZIP) $(PACK_ITEMS)
+	zip -r $(ZIP) $(PACK_ITEMS) -x "sounds/*.md"
 
 install: pack
 	@echo "Installing $(ZIP)..."

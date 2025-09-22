@@ -4,13 +4,12 @@
   "description": "A simple countdown timer for the GNOME top bar",
   "icon": "icon.svg",
   "shell-version": [
-    "43",
     "45",
     "46",
     "47",
     "48"
   ],
-  "version": 1,
+  "version": 2,
   "gettext-domain": "yrtimer",
   "settings-schema": "org.gnome.shell.extensions.yrtimer",
   "url": "https://github.com/yrelay/yrtimer"

@@ -1,10 +1,20 @@
-// prefs/presets.js - Presets page
-const { Adw, Gtk, GLib } = imports.gi;
-const Gettext = imports.gettext;
-const ExtensionUtils = imports.misc.extensionUtils;
+// ESM port — prefs_pages/presets.js (GNOME Shell 45+, Adw/Gtk4)
+import Adw from 'gi://Adw?version=1';
+import Gtk from 'gi://Gtk?version=4.0';
+import GLib from 'gi://GLib';
+import Gio from 'gi://Gio';
+import Gettext from 'gettext';
 
-function buildPresetsPage(settings) {
-  const Me = ExtensionUtils.getCurrentExtension();
+export function buildPresetsPage(settings) {
+  function _getRootPathFromMeta() {
+    try {
+      const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/presets.js
+      const dir = file.get_parent(); // prefs_pages/
+      const root = dir.get_parent(); // extension root
+      return root.get_path();
+    } catch (_) { return ''; }
+  }
+  const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
   let _ = (s) => s;
   try { _ = Gettext.domain(Me.metadata['gettext-domain'] || 'yrtimer').gettext; } catch (_) {}
 
@@ -40,5 +50,3 @@ function buildPresetsPage(settings) {
   pagePresets.add(grpPresets);
   return pagePresets;
 }
-
-var buildPresetsPage = buildPresetsPage;

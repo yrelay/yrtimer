@@ -1,115 +1,115 @@
-// extension.js - legacy imports for GNOME 43 compatibility
+// ESM port — extension.js (GNOME Shell 45+)
+// This file mirrors the legacy extension.js but uses ESM imports/exports.
+// It is located under work/migration/v2/src-esm/ during the migration phase.
+// Once validated, it will replace the root-level extension.js.
 
-const { Gio, GLib } = imports.gi;
-const Gettext = imports.gettext;
-const Main = imports.ui.main;
-const ExtensionUtils = imports.misc.extensionUtils;
+// GI modules
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
 
-// i18n binding for this module
+// GNOME Shell modules
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import * as ExtensionUtils from './core/extensionUtilsCompat.js';
+
+// Gettext
+import Gettext from 'gettext';
+
+// Internal modules
+import { getSettings } from './core/settings.js';
+import { Indicator as IndicatorClass } from './ui/indicator.js';
+
 let _ = (s) => s;
 
-let _indicator = null;
-let _settings = null;
-function shouldDebug() {
-  try { return _settings && _settings.get_boolean && _settings.get_boolean('debug'); } catch (_) { return false; }
+function _shouldDebug(settings) {
+  try { return settings && settings.get_boolean && settings.get_boolean('debug'); } catch (_) { return false; }
 }
 
-function init() {
-  // Initialization (no UI yet)
-  try {
+export default class Extension {
+  constructor(uuid) {
+    try {
+      const Me = ExtensionUtils.getCurrentExtension();
+      const domain = (Me && Me.metadata && Me.metadata['gettext-domain']) || 'yrtimer';
+      try { ExtensionUtils.initTranslations(domain); } catch (_) {}
+      try { _ = Gettext.domain(domain).gettext; } catch (_) {}
+    } catch (_) {}
+    this._indicator = null;
+    this._settings = null;
+  }
+
+  enable() {
     const Me = ExtensionUtils.getCurrentExtension();
-    // Bind gettext domain so runtime UI (indicator/menu) can translate strings
-    ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer');
-    try { _ = Gettext.domain(Me.metadata['gettext-domain'] || 'yrtimer').gettext; } catch (_) {}
-  } catch (_) {}
-}
+    const baseDir = Me.path;
 
-function enable() {
-  const Me = ExtensionUtils.getCurrentExtension();
-  const baseDir = Me.path;
+    try {
+      console.log('[yrtimer] enable() entered');
+      const f = Gio.File.new_for_path(`${baseDir}/.last-enable`);
+      const encoder = new TextEncoder();
+      const bytes = encoder.encode(String(new Date().toISOString()));
+      f.replace_contents(bytes, null, false, Gio.FileCreateFlags.REPLACE_DESTINATION, null);
+    } catch (_) {}
 
-  // Ultra-early breadcrumb: log + write a small marker file to confirm enable() is entered
-  try {
-    log('[yrtimer] enable() entered');
-    const GioNS = imports.gi.Gio;
-    const f = GioNS.File.new_for_path(`${baseDir}/.last-enable`);
-    const encoder = new TextEncoder();
-    const bytes = encoder.encode(String(new Date().toISOString()));
-    f.replace_contents(bytes, null, false, GioNS.FileCreateFlags.REPLACE_DESTINATION, null);
-  } catch (_) {}
-
-  const Settings = Me.imports.core.settings;
-  const IndicatorClass = Me.imports.ui.indicator.Indicator;
-
-  try { _settings = Settings.getSettings(); } catch (e) { _settings = null; try { log(`[yrtimer] getSettings failed: ${e}`); Main.notify('yrtimer', `${_('getSettings failed')}: ${e}`); } catch (_) {} }
-
-  // Ensure a sane default for panel-style at first run
-  try {
-    if (_settings) {
-      const style = _settings.get_string('panel-style');
-      if (!style || style === '') _settings.set_string('panel-style', 'both');
+    const IndicatorCtor = IndicatorClass;
+    try { this._settings = getSettings ? getSettings() : null; } catch (e) {
+      this._settings = null;
+      try { console.error('[yrtimer] getSettings failed:', e); Main.notify('yrtimer', `${_('getSettings failed')}: ${e}`); } catch (_) {}
     }
-  } catch (_) {}
 
-  try {
-    _indicator = new IndicatorClass();
-    // Defer add to panel to next main loop cycle to avoid race conditions
-    GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
-      try {
-        _indicator.addToPanel();
-      } catch (ee) {
-        try { log(`[yrtimer] indicator add failed (idle): ${ee}`); } catch (_) {}
+    try {
+      if (this._settings) {
+        const style = this._settings.get_string('panel-style');
+        if (!style || style === '') this._settings.set_string('panel-style', 'both');
       }
-      return GLib.SOURCE_REMOVE;
-    });
-  } catch (e) {
-    try { log(`[yrtimer] indicator add failed: ${e}`); Main.notify('yrtimer', `${_('Indicator add failed')}: ${e}`); } catch (_) {}
-  }
+    } catch (_) {}
 
-  // Restore last state: if previously RUNNING, resume as PAUSED
-  try {
-    if (_settings) {
-      const raw = _settings.get_string('last-state');
-      if (raw) {
-        const obj = JSON.parse(raw);
-        if (obj && obj.state === 'RUNNING' && typeof obj.remaining === 'number') {
-          _indicator.restorePaused(obj.remaining);
+    try {
+      this._indicator = IndicatorCtor ? new IndicatorCtor() : null;
+      if (this._indicator) {
+        GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
+          try { this._indicator.addToPanel(); } catch (ee) { try { console.error('[yrtimer] indicator add failed (idle):', ee); } catch (_) {} }
+          return GLib.SOURCE_REMOVE;
+        });
+      }
+    } catch (e) {
+      try { console.error('[yrtimer] indicator add failed:', e); Main.notify('yrtimer', `${_('Indicator add failed')}: ${e}`); } catch (_) {}
+    }
+
+    try {
+      if (this._settings && this._indicator) {
+        const raw = this._settings.get_string('last-state');
+        if (raw) {
+          const obj = JSON.parse(raw);
+          if (obj && obj.state === 'RUNNING' && typeof obj.remaining === 'number') {
+            this._indicator.restorePaused(obj.remaining);
+          }
         }
+        const t = this._indicator.getTimer();
+        const persist = () => {
+          const state = t.state;
+          const remaining = t.remaining;
+          const payload = JSON.stringify({ state, remaining, savedAt: Date.now() });
+          this._settings.set_string('last-state', payload);
+        };
+        t.onChanged(persist);
+        try { if (_shouldDebug(this._settings)) Main.notify('yrtimer', _(`State restore wired`)); else console.log('[yrtimer] State restore wired'); } catch (_) {}
       }
-      const t = _indicator.getTimer();
-      const persist = () => {
-        const state = t.state;
-        const remaining = t.remaining;
-        const payload = JSON.stringify({ state, remaining, savedAt: Date.now() });
-        _settings.set_string('last-state', payload);
-      };
-      t.onChanged(persist);
-      try { if (shouldDebug()) Main.notify('yrtimer', _(`State restore wired`)); else log('[yrtimer] State restore wired'); } catch (_) {}
+    } catch (e) {
+      try { console.error('[yrtimer] restore/persist failed:', e); Main.notify('yrtimer', `${_('restore/persist failed')}: ${e}`); } catch (_) {}
     }
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    log(`[yrtimer] restore/persist failed: ${e}`);
-    try { if (shouldDebug()) Main.notify('yrtimer', `${_('restore/persist failed')}: ${e}`); } catch (_) {}
+  }
+
+  disable() {
+    try {
+      if (this._settings && this._indicator) {
+        const t = this._indicator.getTimer();
+        const payload = JSON.stringify({ state: t.state, remaining: t.remaining, savedAt: Date.now() });
+        this._settings.set_string('last-state', payload);
+      }
+    } catch (_) {}
+    try {
+      if (this._indicator) {
+        this._indicator.destroy();
+        this._indicator = null;
+      }
+    } catch (_) {}
   }
 }
-
-function disable() {
-  try {
-    if (_settings && _indicator) {
-      const t = _indicator.getTimer();
-      const payload = JSON.stringify({ state: t.state, remaining: t.remaining, savedAt: Date.now() });
-      _settings.set_string('last-state', payload);
-    }
-  } catch (_) {}
-  try {
-    if (_indicator) {
-      _indicator.destroy();
-      _indicator = null;
-    }
-  } catch (_) {}
-}
-
-// Ensure legacy GJS exports are visible (single definition)
-var init = init;
-var enable = enable;
-var disable = disable;
