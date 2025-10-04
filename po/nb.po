@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 10:28+0200\n"
+"POT-Creation-Date: 2025-10-04 18:05+0200\n"
 "PO-Revision-Date: 2025-09-10 20:48+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,27 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extension.js:44
+#: extension.js:48
 msgid "getSettings failed"
 msgstr ""
 
-#: extension.js:66
+#: extension.js:67
 msgid "Indicator add failed"
 msgstr ""
 
-#: extension.js:87
-msgid "State restore wired"
-msgstr ""
-
-#: extension.js:92
-msgid "restore/persist failed"
-msgstr ""
-
-#: prefs.js:80 prefs.js:81 prefs.js:542 prefs.js:543
+#: prefs.js:58 prefs.js:59
 msgid "About"
 msgstr "Om"
 
-#: prefs.js:82 prefs.js:546
+#: prefs.js:60
 msgid ""
 "For feature requests or bug reports, please visit GitHub. No warranty, "
 "express or implied."
@@ -45,188 +37,19 @@ msgstr ""
 "For funksjonsforespørsler eller feilrapporter, besøk GitHub. Ingen garanti, "
 "uttrykt eller underforstått."
 
-#: prefs.js:88 prefs.js:553
+#: prefs.js:65
 msgid "GitHub"
 msgstr "GitHub"
 
-#: prefs.js:89 prefs.js:554
+#: prefs.js:66
 msgid "Issues"
 msgstr "Problemer"
 
-#: prefs.js:90 prefs.js:555
+#: prefs.js:67
 msgid "Donate"
 msgstr "Doner"
 
-#: prefs.js:105 prefs_pages/general.js:13
-msgid "General"
-msgstr "Generelt"
-
-#: prefs.js:108 prefs_pages/general.js:15
-msgid "Notifications & Sound"
-msgstr "Varsler og lyd"
-
-#: prefs.js:110 prefs_pages/general.js:17
-msgid "Enable notifications"
-msgstr "Aktiver varsler"
-
-#: prefs.js:118 prefs_pages/general.js:25
-msgid "Enable sound"
-msgstr "Aktiver lyd"
-
-#: prefs.js:126 prefs_pages/general.js:33
-msgid "Volume"
-msgstr "Volum"
-
-#: prefs.js:137 prefs_pages/general.js:44
-msgid "Custom sound path (relative or absolute)"
-msgstr "Egendefinert lydsti (relativ eller absolutt)"
-
-#: prefs.js:146 prefs_pages/general.js:175
-msgid "Sound"
-msgstr "Lyd"
-
-#: prefs.js:170 prefs_pages/general.js:72
-msgid "System: complete"
-msgstr "System: fullført"
-
-#: prefs.js:171 prefs_pages/general.js:73
-msgid "System: bell"
-msgstr "System: bjelle"
-
-#: prefs.js:172 prefs_pages/general.js:74
-msgid "System: message-new-instant"
-msgstr "System: melding-ny-øyeblikkelig"
-
-#: prefs.js:173 prefs_pages/general.js:75
-msgid "System: dialog-information"
-msgstr "System: dialog-informasjon"
-
-#: prefs.js:174 prefs_pages/general.js:76
-msgid "System: alarm-clock-elapsed"
-msgstr "System: alarmklokke utløpt"
-
-#: prefs.js:177 prefs.js:249 prefs_pages/general.js:79
-#: prefs_pages/general.js:135
-msgid "Custom…"
-msgstr "Egendefinert…"
-
-#: prefs.js:212 prefs_pages/general.js:108
-msgid "Preview"
-msgstr "Forhåndsvisning"
-
-#: prefs.js:230 prefs_pages/general.js:116
-msgid "Sound preview"
-msgstr ""
-
-#: prefs.js:255 prefs.js:296 prefs_pages/general.js:140
-msgid "Select sound file"
-msgstr "Velg lydfil"
-
-#: prefs.js:261 prefs.js:304 prefs_pages/general.js:142
-msgid "Audio"
-msgstr "Lyd"
-
-#: prefs.js:301
-msgid "_Cancel"
-msgstr "_Avbryt"
-
-#: prefs.js:302
-msgid "_Open"
-msgstr "_Åpne"
-
-#: prefs.js:347 ui/indicator.js:647 ui/indicator.js:650
-#: prefs_pages/general.js:181
-msgid "Reset"
-msgstr "Tilbakestill"
-
-#: prefs.js:348 prefs_pages/general.js:182
-msgid "Restore all settings to schema defaults"
-msgstr "Gjenopprett alle innstillinger til skjemaets standardverdier"
-
-#: prefs.js:349 prefs_pages/general.js:183
-msgid "Restore all defaults"
-msgstr "Gjenopprett alle standardverdier"
-
-#: prefs.js:412 prefs.js:413 prefs_pages/panel.js:11 prefs_pages/panel.js:12
-msgid "Panel & Display"
-msgstr "Panel og visning"
-
-#: prefs.js:415 prefs_pages/panel.js:14
-msgid "Panel style (icon/text/both)"
-msgstr "Panelstil (ikon/tekst/begge)"
-
-#: prefs.js:423 prefs_pages/panel.js:22
-msgid "Display format"
-msgstr "Visningsformat"
-
-#: prefs.js:432 prefs_pages/panel.js:30
-msgid "Position in panel"
-msgstr "Plassering i panelet"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Left"
-msgstr "Venstre"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Center"
-msgstr "Midten"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Right"
-msgstr "Høyre"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Far left"
-msgstr "Lengst til venstre"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Far right"
-msgstr "Lengst til høyre"
-
-#: prefs.js:444
-msgid "Panel spacing (px)"
-msgstr "Panelavstand (px)"
-
-#: prefs.js:457 ui/indicator.js:275 ui/indicator.js:532 ui/indicator.js:673
-#: ui/indicator.js:675 prefs_pages/presets.js:11
-msgid "Presets"
-msgstr "Forhåndsinnstillinger"
-
-#: prefs.js:458 prefs_pages/presets.js:12
-msgid "Presets (comma-separated)"
-msgstr "Forhåndsinnstillinger (kommaseparert)"
-
-#: prefs.js:459 prefs_pages/presets.js:13
-msgid ""
-"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
-msgstr ""
-"Støtter m/s-suffiks; rene tall = minutter. Eksempler: 1s, 4m, 5m, 10, 25"
-
-#: prefs.js:470 prefs_pages/presets.js:20
-msgid "Save"
-msgstr "Lagre"
-
-#: prefs.js:493 prefs_pages/repeat.js:11
-msgid "Repetition"
-msgstr "Gjentakelse"
-
-#: prefs.js:494 prefs_pages/repeat.js:12
-msgid "Repetition on completion"
-msgstr "Gjentakelse ved fullføring"
-
-#: prefs.js:496 prefs_pages/repeat.js:14
-msgid "Enable repetition"
-msgstr "Aktiver gjentakelse"
-
-#: prefs.js:504 prefs_pages/repeat.js:22
-msgid "Repeat count"
-msgstr "Antall gjentakelser"
-
-#: prefs.js:510 prefs_pages/repeat.js:28
-msgid "Repeat interval (seconds)"
-msgstr "Gjentakelsesintervall (sekunder)"
-
-#: ui/indicator.js:76 i18n/extra_strings.js:17
+#: ui/indicator.js:84 i18n/extra_strings.js:17
 msgid ""
 "Left: start/pause, Middle: reset, Shift+Left: last preset, Ctrl+Left: "
 "Preferences"
@@ -234,148 +57,209 @@ msgstr ""
 "Venstre: start/pause, Midten: tilbakestill, Shift+Venstre: siste "
 "forhåndsinnstilling, Ctrl+Venstre: Innstillinger"
 
-#: ui/indicator.js:79 ui/indicator.js:96
+#: ui/indicator.js:87 ui/indicator.js:102
 msgid "yrtimer indicator"
 msgstr "yrtimer-indikator"
 
-#: ui/indicator.js:94
+#: ui/indicator.js:100
 msgid "Timer icon"
 msgstr "Timer-ikon"
 
-#: ui/indicator.js:95
+#: ui/indicator.js:101
 msgid "Remaining time"
 msgstr "Gjenstående tid"
 
-#: ui/indicator.js:275 ui/indicator.js:533 ui/indicator.js:681
-#: ui/indicator.js:683
-msgid "Preferences"
-msgstr "Innstillinger"
-
-#: ui/indicator.js:277
-msgid "[i18n probe] Preferences"
-msgstr "[i18n] Innstillinger"
-
-#: ui/indicator.js:306
+#: ui/indicator.js:226
 msgid "Preset"
 msgstr "Forhåndsinnstilling"
 
-#: ui/indicator.js:359 ui/indicator.js:368
+#: ui/indicator.js:277 ui/indicator.js:285
 msgid "Timer"
 msgstr "Tidtaker"
 
-#: ui/indicator.js:359 ui/indicator.js:368
+#: ui/indicator.js:277 ui/indicator.js:285
 msgid "Time is up!"
 msgstr "Tiden er ute!"
 
-#: ui/indicator.js:544
+#: ui/indicator.js:435 ui/indicator.js:551 ui/indicator.js:552
+#: prefs_pages/presets.js:22
+msgid "Presets"
+msgstr "Forhåndsinnstillinger"
+
+#: ui/indicator.js:436 ui/indicator.js:557 ui/indicator.js:558
+msgid "Preferences"
+msgstr "Innstillinger"
+
+#: ui/indicator.js:446
 msgid "Enter duration (e.g., 1m 12s)"
 msgstr "Angi varighet (f.eks. 1m 12s)"
 
-#: ui/indicator.js:546
+#: ui/indicator.js:448
 msgid "Duration input"
 msgstr "Varighetsfelt"
 
-#: ui/indicator.js:645 ui/indicator.js:648
+#: ui/indicator.js:525 ui/indicator.js:528
 msgid "Start"
 msgstr "Start"
 
-#: ui/indicator.js:646 ui/indicator.js:649
+#: ui/indicator.js:526 ui/indicator.js:529
 msgid "Pause"
 msgstr "Pause"
 
-#: prefs_pages/diag.js:12 prefs_pages/diag.js:15
-msgid "Diagnostics"
-msgstr "Diagnostikk"
+#: ui/indicator.js:527 ui/indicator.js:530 prefs_pages/general.js:177
+msgid "Reset"
+msgstr "Tilbakestill"
 
-#: prefs_pages/diag.js:17
-msgid "Enable debug logs"
-msgstr "Aktiver feilsøkingslogger"
+#: prefs_pages/repeat.js:21
+msgid "Repetition"
+msgstr "Gjentakelse"
 
-#: prefs_pages/diag.js:26
-msgid "Override locale for preferences"
-msgstr "Overstyr lokalitet for innstillinger"
+#: prefs_pages/repeat.js:22
+msgid "Repetition on completion"
+msgstr "Gjentakelse ved fullføring"
 
-#: prefs_pages/diag.js:26
-msgid "Empty = system default (restart prefs to fully apply)"
-msgstr ""
-"Tom = systemstandard (start innstillingene på nytt for å gjelde fullt ut)"
+#: prefs_pages/repeat.js:24
+msgid "Enable repetition"
+msgstr "Aktiver gjentakelse"
 
-#: prefs_pages/diag.js:27 prefs_pages/diag.js:44
-msgid "System default"
-msgstr "Systemstandard"
+#: prefs_pages/repeat.js:32
+msgid "Repeat count"
+msgstr "Antall gjentakelser"
 
-#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
-msgid "Language changed"
-msgstr "Språk endret"
+#: prefs_pages/repeat.js:38
+msgid "Repeat interval (seconds)"
+msgstr "Gjentakelsesintervall (sekunder)"
 
-#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
-msgid "Restarting preferences to apply translations..."
-msgstr "Starter innstillinger på nytt for å bruke oversettelser..."
+#: prefs_pages/general.js:26
+msgid "General"
+msgstr "Generelt"
 
-#: prefs_pages/diag.js:59 prefs_pages/diag.js:87 prefs_pages/diag.js:222
-msgid "OK"
-msgstr "OK"
+#: prefs_pages/general.js:27
+msgid "Notifications & Sound"
+msgstr "Varsler og lyd"
 
-#: prefs_pages/diag.js:81
-msgid "e.g., fr, de, zh_CN"
-msgstr "e.g., fr, de, zh_CN"
+#: prefs_pages/general.js:29
+msgid "Enable notifications"
+msgstr "Aktiver varsler"
 
-#: prefs_pages/diag.js:113 prefs_pages/diag.js:166
-msgid "Extension path"
-msgstr "Utvidelsessti"
+#: prefs_pages/general.js:37
+msgid "Enable sound"
+msgstr "Aktiver lyd"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "Icon (embedded)"
-msgstr "Ikon (innebygd)"
+#: prefs_pages/general.js:45
+msgid "Volume"
+msgstr "Volum"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "exists"
-msgstr "finnes"
+#: prefs_pages/general.js:55
+msgid "Custom sound path (relative or absolute)"
+msgstr "Egendefinert lydsti (relativ eller absolutt)"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "missing"
-msgstr "mangler"
-
-#: prefs_pages/diag.js:123 prefs_pages/diag.js:196
-msgid "presets (sec)"
-msgstr "forhåndsinnstillinger (sek)"
-
-#: prefs_pages/diag.js:136
-msgid "Status and environment checks (Press Refresh to update)"
-msgstr "Status- og miljøkontroller (Trykk Oppdater for å oppdatere)"
-
-#: prefs_pages/diag.js:161
-msgid "Refresh"
-msgstr "Oppdater"
-
-#: prefs_pages/diag.js:172
-msgid "GNOME Shell"
-msgstr "GNOME Shell"
-
-#: prefs_pages/diag.js:182
-msgid "Extension state"
-msgstr "Utvidelsestilstand"
-
-#: prefs_pages/diag.js:184
-msgid "Extension info"
-msgstr "Informasjon om utvidelse"
-
-#: prefs_pages/diag.js:210
-msgid "Copy"
-msgstr "Kopier"
-
-#: prefs_pages/diag.js:221
-msgid "Diagnostics copied"
-msgstr "Diagnostikk kopiert"
-
-#: prefs_pages/diag.js:221
-msgid "Diagnostics have been copied to the clipboard."
-msgstr "Diagnostikk er kopiert til utklippstavlen."
-
-#: prefs_pages/general.js:69
+#: prefs_pages/general.js:79
 msgid "Embedded"
 msgstr ""
 
-#: prefs_pages/general.js:81
+#: prefs_pages/general.js:82
+msgid "System: complete"
+msgstr "System: fullført"
+
+#: prefs_pages/general.js:83
+msgid "System: bell"
+msgstr "System: bjelle"
+
+#: prefs_pages/general.js:84
+msgid "System: message-new-instant"
+msgstr "System: melding-ny-øyeblikkelig"
+
+#: prefs_pages/general.js:85
+msgid "System: dialog-information"
+msgstr "System: dialog-informasjon"
+
+#: prefs_pages/general.js:86
+msgid "System: alarm-clock-elapsed"
+msgstr "System: alarmklokke utløpt"
+
+#: prefs_pages/general.js:88 prefs_pages/general.js:132
+msgid "Custom…"
+msgstr "Egendefinert…"
+
+#: prefs_pages/general.js:90
 msgid "(no sounds found)"
 msgstr ""
+
+#: prefs_pages/general.js:115
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+#: prefs_pages/general.js:136
+msgid "Select sound file"
+msgstr "Velg lydfil"
+
+#: prefs_pages/general.js:138
+msgid "Audio"
+msgstr "Lyd"
+
+#: prefs_pages/general.js:171
+msgid "Sound"
+msgstr "Lyd"
+
+#: prefs_pages/general.js:178
+msgid "Restore all settings to schema defaults"
+msgstr "Gjenopprett alle innstillinger til skjemaets standardverdier"
+
+#: prefs_pages/general.js:179
+msgid "Restore all defaults"
+msgstr "Gjenopprett alle standardverdier"
+
+#: prefs_pages/presets.js:23
+msgid "Presets (comma-separated)"
+msgstr "Forhåndsinnstillinger (kommaseparert)"
+
+#: prefs_pages/presets.js:24
+msgid ""
+"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
+msgstr ""
+"Støtter m/s-suffiks; rene tall = minutter. Eksempler: 1s, 4m, 5m, 10, 25"
+
+#: prefs_pages/presets.js:31
+msgid "Save"
+msgstr "Lagre"
+
+#: prefs_pages/panel.js:21 prefs_pages/panel.js:22
+msgid "Panel & Display"
+msgstr "Panel og visning"
+
+#: prefs_pages/panel.js:25
+msgid "Panel style (icon/text/both)"
+msgstr "Panelstil (ikon/tekst/begge)"
+
+#: prefs_pages/panel.js:34
+msgid "Display format"
+msgstr "Visningsformat"
+
+#: prefs_pages/panel.js:43
+msgid "Position in panel"
+msgstr "Plassering i panelet"
+
+#: prefs_pages/panel.js:44
+msgid "Left"
+msgstr "Venstre"
+
+#: prefs_pages/panel.js:44
+msgid "Center"
+msgstr "Midten"
+
+#: prefs_pages/panel.js:44
+msgid "Right"
+msgstr "Høyre"
+
+#: prefs_pages/panel.js:44
+msgid "Far left"
+msgstr "Lengst til venstre"
+
+#: prefs_pages/panel.js:44
+msgid "Far right"
+msgstr "Lengst til høyre"
+
+#: prefs_pages/panel.js:52
+msgid "Panel spacing (px)"
+msgstr "Panelavstand (px)"

@@ -1,9 +1,9 @@
 // ESM port — prefs_pages/presets.js (GNOME Shell 45+, Adw/Gtk4)
-import Adw from 'gi://Adw?version=1';
-import Gtk from 'gi://Gtk?version=4.0';
+import Adw from 'gi://Adw';
+import Gtk from 'gi://Gtk';
 import GLib from 'gi://GLib';
 import Gio from 'gi://Gio';
-import Gettext from 'gettext';
+import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
 
 export function buildPresetsPage(settings) {
   function _getRootPathFromMeta() {
@@ -16,7 +16,8 @@ export function buildPresetsPage(settings) {
   }
   const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
   let _ = (s) => s;
-  try { _ = Gettext.domain(Me.metadata['gettext-domain'] || 'yrtimer').gettext; } catch (_) {}
+  try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
+  _ = ExtensionUtils.gettext;
 
   const pagePresets = new Adw.PreferencesPage({ title: _('Presets'), icon_name: 'document-edit-symbolic' });
   const grpPresets = new Adw.PreferencesGroup({ title: _('Presets (comma-separated)') });

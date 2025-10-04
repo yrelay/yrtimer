@@ -1,8 +1,8 @@
 // ESM stub — prefs_pages/panel.js (GNOME Shell 45+, Adw/Gtk4)
-import Adw from 'gi://Adw?version=1';
-import Gtk from 'gi://Gtk?version=4.0';
+import Adw from 'gi://Adw';
+import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
-import Gettext from 'gettext';
+import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
 
 export function buildPanelPage(settings) {
   function _getRootPathFromMeta() {
@@ -15,7 +15,8 @@ export function buildPanelPage(settings) {
   }
   const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
   let _ = (s) => s;
-  try { _ = Gettext.domain(Me.metadata['gettext-domain'] || 'yrtimer').gettext; } catch (_) {}
+  try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
+  _ = ExtensionUtils.gettext;
 
   const page = new Adw.PreferencesPage({ title: _('Panel & Display'), icon_name: 'preferences-system-time-symbolic' });
   const grp = new Adw.PreferencesGroup({ title: _('Panel & Display') });
@@ -24,7 +25,7 @@ export function buildPanelPage(settings) {
   const rowPanelStyle = new Adw.ActionRow({ title: _('Panel style (icon/text/both)') });
   const panelOptions = ['icon', 'text', 'both'];
   const ddPanel = Gtk.DropDown.new_from_strings(panelOptions);
-  try { ddPanel.set_selected(panelOptions.indexOf(settings.get_string('panel-style'))); } catch (_) {}
+  ddPanel.set_selected(panelOptions.indexOf(settings.get_string('panel-style')));
   ddPanel.connect('notify::selected', d => settings.set_string('panel-style', panelOptions[d.get_selected()]));
   rowPanelStyle.add_suffix(ddPanel);
   grp.add(rowPanelStyle);
@@ -33,7 +34,7 @@ export function buildPanelPage(settings) {
   const rowFormat = new Adw.ActionRow({ title: _('Display format') });
   const fmtOptions = ['auto', 'mm:ss', 'hh:mm:ss', 'hide-hours-if-zero'];
   const ddFmt = Gtk.DropDown.new_from_strings(fmtOptions);
-  try { ddFmt.set_selected(fmtOptions.indexOf(settings.get_string('display-format'))); } catch (_) {}
+  ddFmt.set_selected(fmtOptions.indexOf(settings.get_string('display-format')));
   ddFmt.connect('notify::selected', d => settings.set_string('display-format', fmtOptions[d.get_selected()]));
   rowFormat.add_suffix(ddFmt);
   grp.add(rowFormat);
@@ -42,7 +43,7 @@ export function buildPanelPage(settings) {
   const rowPosition = new Adw.ActionRow({ title: _('Position in panel') });
   const posLabels = [_('Left'), _('Center'), _('Right'), _('Far left'), _('Far right')];
   const ddPos = Gtk.DropDown.new_from_strings(posLabels);
-  try { ddPos.set_selected(Math.max(0, Math.min(posLabels.length - 1, settings.get_int('position-in-panel')))); } catch (_) { ddPos.set_selected(2); }
+  ddPos.set_selected(Math.max(0, Math.min(posLabels.length - 1, settings.get_int('position-in-panel'))));
   ddPos.connect('notify::selected', d => settings.set_int('position-in-panel', d.get_selected()));
   rowPosition.add_suffix(ddPos);
   grp.add(rowPosition);

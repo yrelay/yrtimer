@@ -1,8 +1,8 @@
 // ESM port — prefs_pages/repeat.js (GNOME Shell 45+, Adw/Gtk4)
-import Adw from 'gi://Adw?version=1';
-import Gtk from 'gi://Gtk?version=4.0';
+import Adw from 'gi://Adw';
+import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
-import Gettext from 'gettext';
+import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
 
 export function buildRepeatPage(settings) {
   function _getRootPathFromMeta() {
@@ -15,7 +15,8 @@ export function buildRepeatPage(settings) {
   }
   const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
   let _ = (s) => s;
-  try { _ = Gettext.domain(Me.metadata['gettext-domain'] || 'yrtimer').gettext; } catch (_) {}
+  try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
+  _ = ExtensionUtils.gettext;
 
   const pageRepeat = new Adw.PreferencesPage({ title: _('Repetition'), icon_name: 'media-playlist-repeat-symbolic' });
   const grpRepeat = new Adw.PreferencesGroup({ title: _('Repetition on completion') });

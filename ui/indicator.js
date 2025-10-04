@@ -7,12 +7,12 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Clutter from 'gi://Clutter';
 import Pango from 'gi://Pango';
-
-import Gettext from 'gettext';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 // No ExtensionUtils import: compute base path from import.meta
+
+import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
 
 // Internal modules (to be ported to ESM as well)
 import { Timer, TimerState } from '../core/timer.js';
@@ -30,7 +30,8 @@ function _getRootPathFromMeta() {
 const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
 
 let _ = (s) => s;
-try { _ = Gettext.domain(Me.metadata['gettext-domain'] || 'yrtimer').gettext; } catch (_) {}
+try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
+_ = ExtensionUtils.gettext;
 
 try { log('[yrtimer] indicator.js loaded (ESM)'); } catch (_) {}
 
@@ -43,7 +44,7 @@ class Indicator extends PanelMenu.Button {
     this._baseDirPath = Me.path;
     try { log('[yrtimer] Indicator: constructor start'); } catch (_) {}
 
-    try { this._applyLocaleOverride(); } catch (_) {}
+    // Locale override retiré pour simplification
 
     this._icon = new St.Icon({ style_class: 'system-status-icon', y_align: Clutter.ActorAlign.CENTER });
     try {
@@ -124,17 +125,7 @@ class Indicator extends PanelMenu.Button {
       this._settings.connect('changed::presets', () => this._rebuildPresets());
       this._settings.connect('changed::panel-style', () => this._applyPanelStyle());
       this._settings.connect('changed::display-format', () => this._updateUI());
-      this._settings.connect('changed::override-locale', () => {
-        try { this.menu.close(); } catch (_) {}
-        try { this._applyLocaleOverride(); } catch (_) {}
-        try {
-          this.menu.removeAll();
-          GLib.timeout_add(GLib.PRIORITY_DEFAULT, 30, () => {
-            try { this._buildMenu(); this._updateUI(); } catch (_) {}
-            return GLib.SOURCE_REMOVE;
-          });
-        } catch (_) {}
-      });
+      // Suppression de l'écoute override-locale
       this._settings.connect('changed::position-in-panel', () => {
         try { this._repositionInPanel(); } catch (_) {}
       });
@@ -210,65 +201,7 @@ class Indicator extends PanelMenu.Button {
     });
   }
 
-  _applyLocaleOverride() {
-    try {
-      const domain = Me.metadata['gettext-domain'] || 'yrtimer';
-      let loc = '';
-      try { const s = Settings.getSettings ? Settings.getSettings() : null; loc = s ? (s.get_string('override-locale') || '') : ''; } catch (_) { loc = ''; }
-      const prevLANGUAGE = GLib.getenv('LANGUAGE') || '';
-      const prevLCMSG = GLib.getenv('LC_MESSAGES') || '';
-      const prevLANG = GLib.getenv('LANG') || '';
-      try {
-        if (loc) {
-          try { GLib.setenv('LANGUAGE', loc, true); } catch (_) {}
-          try { GLib.setenv('LC_MESSAGES', loc, true); } catch (_) {}
-          try { GLib.setenv('LANG', loc, true); } catch (_) {}
-        }
-        try {
-          const localePath = `${Me.path}/locale`;
-          if (Gettext.bindtextdomain) Gettext.bindtextdomain(domain, localePath);
-          if (Gettext.bind_textdomain_codeset) Gettext.bind_textdomain_codeset(domain, 'UTF-8');
-        } catch (_) {}
-        try { _ = Gettext.domain(domain).gettext; } catch (_) {}
-      } finally {
-        try { GLib.setenv('LANGUAGE', prevLANGUAGE, true); } catch (_) {}
-        try { GLib.setenv('LC_MESSAGES', prevLCMSG, true); } catch (_) {}
-        try { GLib.setenv('LANG', prevLANG, true); } catch (_) {}
-      }
-      const locForWrap = loc; const domForWrap = domain;
-      _ = (s) => {
-        const prevA = GLib.getenv('LANGUAGE') || '';
-        const prevB = GLib.getenv('LC_MESSAGES') || '';
-        const prevC = GLib.getenv('LANG') || '';
-        let prevLocale = null;
-        try { if (Gettext.setlocale) prevLocale = Gettext.setlocale(Gettext.LocaleCategory.ALL, null); } catch (_) {}
-        try {
-          if (locForWrap) {
-            GLib.setenv('LANGUAGE', locForWrap, true);
-            GLib.setenv('LC_MESSAGES', locForWrap, true);
-            GLib.setenv('LANG', locForWrap, true);
-            if (Gettext.setlocale) Gettext.setlocale(Gettext.LocaleCategory.ALL, locForWrap);
-          }
-        } catch (_) {}
-        let out = s;
-        try { out = Gettext.dgettext ? Gettext.dgettext(domForWrap, s) : Gettext.domain(domForWrap).gettext(s); } catch (_) {}
-        try {
-          if (Gettext.setlocale && prevLocale !== null) Gettext.setlocale(Gettext.LocaleCategory.ALL, prevLocale);
-          GLib.setenv('LANGUAGE', prevA, true);
-          GLib.setenv('LC_MESSAGES', prevB, true);
-          GLib.setenv('LANG', prevC, true);
-        } catch (_) {}
-        return out;
-      };
-      try { log(`[yrtimer] indicator i18n: locale=${loc||'system'} | Presets='${_('Presets')}' Preferences='${_('Preferences')}'`); } catch (_) {}
-      try {
-        const probe = _ ? _('[i18n probe] Preferences') : 'n/a';
-        log(`[yrtimer] _applyLocaleOverride -> ${loc || 'system default'} | example: ${probe}`);
-      } catch (_) {}
-    } catch (e) {
-      try { log(`[yrtimer] _applyLocaleOverride error: ${e}`); } catch (_) {}
-    }
-  }
+  // _applyLocaleOverride supprimée
 
   _rebuildQuickPills() {
     try {
@@ -547,22 +480,11 @@ class Indicator extends PanelMenu.Button {
         if (this._settings && !this._presetsChangedId)
           this._presetsChangedId = this._settings.connect('changed::presets', () => this._rebuildQuickPills());
       } catch (_) {}
-      try {
-        if (this._settings && !this._localeChangedId)
-          this._localeChangedId = this._settings.connect('changed::override-locale', () => {
-            try { this._applyLocaleOverride(); } catch (_) {}
-            try {
-              this.menu.removeAll();
-              this._buildMenu();
-              this._updateUI();
-            } catch (_) {}
-          });
-      } catch (_) {}
+      // Plus d'écoute override-locale dans le menu
       try {
         if (!this._menuOpenId)
           this._menuOpenId = this.menu.connect('open-state-changed', (_m, open) => {
             if (open) {
-              try { this._applyLocaleOverride(); } catch (_) {}
               try {
                 this.menu.removeAll();
                 this._buildMenu();
@@ -678,11 +600,7 @@ class Indicator extends PanelMenu.Button {
   }
 
   _logDebug(msg) {
-    try {
-      let dbg = false;
-      if (this._settings) dbg = this._settings.get_boolean('debug');
-      if (dbg) console.debug(`[yrtimer] ${msg}`);
-    } catch (_) {}
+    // Debug mode supprimé: no-op
   }
 
   getTimer() { return this._timer; }

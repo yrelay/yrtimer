@@ -1,20 +1,19 @@
 // ESM port — prefs.js (GNOME Shell 45+, Adw/Gtk4)
 // Builds the preferences window using page builders from prefs_pages/*
 
-import Adw from 'gi://Adw?version=1';
-import Gtk from 'gi://Gtk?version=4.0';
+import Adw from 'gi://Adw';
+import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
 import GObject from 'gi://GObject';
-import Gdk from 'gi://Gdk?version=4.0';
+import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
-import Gettext from 'gettext';
+import * as ExtensionUtils from './core/extensionUtilsCompat.js';
 import { getSettings } from './core/settings.js';
 
 import { buildGeneralPage } from './prefs_pages/general.js';
 import { buildPanelPage } from './prefs_pages/panel.js';
 import { buildPresetsPage } from './prefs_pages/presets.js';
 import { buildRepeatPage } from './prefs_pages/repeat.js';
-import { buildDiagnosticsPage } from './prefs_pages/diag.js';
 
 let _ = (s) => s;
 function _getRootPathFromMeta() {
@@ -29,33 +28,17 @@ const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtime
 export function init() {
   try {
     const domain = Me.metadata['gettext-domain'] || 'yrtimer';
-    try {
-      const localePath = `${Me.path}/locale`;
-      if (Gettext.bindtextdomain) Gettext.bindtextdomain(domain, localePath);
-      if (Gettext.bind_textdomain_codeset) Gettext.bind_textdomain_codeset(domain, 'UTF-8');
-      if (Gettext.textdomain) Gettext.textdomain(domain);
-    } catch (_) {}
-    try { _ = Gettext.domain(domain).gettext; } catch (_) {}
+    try { ExtensionUtils.initTranslations(domain); } catch (_) {}
+    _ = ExtensionUtils.gettext;
   } catch (_) {}
 }
 
 export function fillPreferencesWindow(window) {
   const settings = getSettings();
-
   try {
     const domain = Me.metadata['gettext-domain'] || 'yrtimer';
-    const loc = settings.get_string('override-locale') || '';
-    if (loc) {
-      try { GLib.setenv('LANGUAGE', loc, true); } catch (_) {}
-      try { GLib.setenv('LC_MESSAGES', loc, true); } catch (_) {}
-    }
-    try {
-      const localePath = `${Me.path}/locale`;
-      if (Gettext.bindtextdomain) Gettext.bindtextdomain(domain, localePath);
-      if (Gettext.bind_textdomain_codeset) Gettext.bind_textdomain_codeset(domain, 'UTF-8');
-      if (Gettext.textdomain) Gettext.textdomain(domain);
-    } catch (_) {}
-    try { _ = Gettext.domain(domain).gettext; } catch (_) {}
+    try { ExtensionUtils.initTranslations(domain); } catch (_) {}
+    _ = ExtensionUtils.gettext;
   } catch (_) {}
 
   // Pages
@@ -70,16 +53,6 @@ export function fillPreferencesWindow(window) {
 
   const pageRepeat = buildSafe(() => buildRepeatPage(settings));
   if (pageRepeat) window.add(pageRepeat);
-
-  // Optionally diagnostics
-  try {
-    const showDiag = settings.get_boolean('show-diagnostics');
-    const dbg = settings.get_boolean('debug');
-    if (buildDiagnosticsPage && (showDiag || dbg)) {
-      const pageDiag = buildSafe(() => buildDiagnosticsPage(settings, window));
-      if (pageDiag) window.add(pageDiag);
-    }
-  } catch (_) {}
 
   // About
   const pageAbout = new Adw.PreferencesPage({ title: _('About'), icon_name: 'help-about-symbolic' });

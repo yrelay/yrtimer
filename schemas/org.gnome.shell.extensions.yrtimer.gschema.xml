@@ -57,12 +57,6 @@
       <description>Play a sound when the timer elapses (if available)</description>
     </key>
 
-    <!-- Debug mode: enables extra logs and optional informative toasts -->
-    <key name="debug" type="b">
-      <default>false</default>
-      <summary>Enable debug mode</summary>
-      <description>When true, enables additional debugging logs and surfaces the Diagnostics tab.</description>
-    </key>
 
     <key name="repeat-enabled" type="b">
       <default>false</default>
@@ -88,18 +82,6 @@
       <description>Compact JSON string with last state for restoration</description>
     </key>
 
-    <!-- Show Diagnostics page in preferences (hidden by default) -->
-    <key name="show-diagnostics" type="b">
-      <default>false</default>
-      <summary>Show Diagnostics page in preferences</summary>
-      <description>Controls whether the Diagnostics tab is visible in the preferences window. Intended for debugging or support scenarios.</description>
-    </key>
-
-    <!-- Override locale for preferences/debugging: empty string = system default -->
-    <key name="override-locale" type="s">
-      <default>''</default>
-      <summary>Override locale for preferences</summary>
-      <description>When non-empty, forces the preferences UI to use this locale (e.g., 'fr', 'de', 'zh_CN'). Empty string means use the system locale.</description>
-    </key>
+    
   </schema>
 </schemalist>

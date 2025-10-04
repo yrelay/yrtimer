@@ -1,10 +1,10 @@
 // ESM port — prefs_pages/general.js (GNOME Shell 45+, Adw/Gtk4)
 
-import Adw from 'gi://Adw?version=1';
-import Gtk from 'gi://Gtk?version=4.0';
+import Adw from 'gi://Adw';
+import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
-import Gettext from 'gettext';
+import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
 
 // Do NOT import core/notifier.js here: it depends on Shell-only modules (Main/MessageTray)
 // which are unavailable in the standalone preferences process.
@@ -20,7 +20,8 @@ export function buildGeneralPage(settings) {
   }
   const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
   let _ = (s) => s;
-  try { _ = Gettext.domain(Me.metadata['gettext-domain'] || 'yrtimer').gettext; } catch (_) {}
+  try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
+  _ = ExtensionUtils.gettext;
 
   const pageGeneral = new Adw.PreferencesPage({ title: _('General'), icon_name: 'preferences-system-symbolic' });
   const grpNotify = new Adw.PreferencesGroup({ title: _('Notifications & Sound') });
@@ -57,7 +58,7 @@ export function buildGeneralPage(settings) {
   entrySound.connect('changed', e => settings.set_string('default-sound', e.get_text()));
   rowDefSound.add_suffix(entrySound);
   grpNotify.add(rowDefSound);
-  try { rowDefSound.set_visible(false); } catch (_) {}
+  rowDefSound.set_visible(false);
 
   const soundChoices = [];
   const pushIfExists = (label, pathOrName) => {
@@ -88,26 +89,24 @@ export function buildGeneralPage(settings) {
   const ddLabels = soundChoices.map(([label]) => label);
   const dd = Gtk.DropDown.new_from_strings(ddLabels.length > 0 ? ddLabels : [_('(no sounds found)')]);
   if (ddLabels.length > 0) {
-    try {
-      const cur = settings.get_string('default-sound') || '';
-      let idx = soundChoices.findIndex(([_, val]) => val === cur || (val.startsWith('/') && val.endsWith(cur)));
-      if (idx < 0 && cur.startsWith('/')) {
-        const cidx = soundChoices.findIndex(([_, v]) => v === '__custom__');
-        if (cidx >= 0) idx = cidx;
-      }
-      dd.set_selected(idx >= 0 ? idx : 0);
-      const isCustom = soundChoices[dd.get_selected()] && soundChoices[dd.get_selected()][1] === '__custom__';
-      try { rowDefSound.set_visible(isCustom); } catch (_) {}
-    } catch (_) { dd.set_selected(0); }
+    const cur = settings.get_string('default-sound') || '';
+    let idx = soundChoices.findIndex(([_, val]) => val === cur || (val.startsWith('/') && val.endsWith(cur)));
+    if (idx < 0 && cur.startsWith('/')) {
+      const cidx = soundChoices.findIndex(([_, v]) => v === '__custom__');
+      if (cidx >= 0) idx = cidx;
+    }
+    dd.set_selected(idx >= 0 ? idx : 0);
+    const isCustom = soundChoices[dd.get_selected()] && soundChoices[dd.get_selected()][1] === '__custom__';
+    rowDefSound.set_visible(isCustom);
     dd.connect('notify::selected', d => {
       const i = d.get_selected();
       if (i < 0 || i >= soundChoices.length) return;
       const val = soundChoices[i][1];
       const isCustom = (val === '__custom__');
-      try { rowDefSound.set_visible(isCustom); } catch (_) {}
+      rowDefSound.set_visible(isCustom);
       if (isCustom) return;
       settings.set_string('default-sound', val);
-      try { entrySound.set_text(val); } catch (_) {}
+      entrySound.set_text(val);
     });
   } else {
     dd.set_sensitive(false);
@@ -131,7 +130,7 @@ export function buildGeneralPage(settings) {
     } catch (_) {}
   });
   const btnCustom = new Gtk.Button({ label: _('Custom…') });
-  try { btnCustom.set_sensitive(true); } catch (_) {}
+  btnCustom.set_sensitive(true);
   btnCustom.connect('clicked', () => {
     try {
       const chooser = new Gtk.FileChooserNative({ title: _('Select sound file'), action: Gtk.FileChooserAction.OPEN, transient_for: null, modal: true });
@@ -155,8 +154,8 @@ export function buildGeneralPage(settings) {
             if (path && path.startsWith(soundsDir)) toStore = path.substring(soundsDir.length);
           } catch (_) {}
           settings.set_string('default-sound', toStore);
-          try { entrySound.set_text(toStore); } catch (_) {}
-          try { rowDefSound.set_visible(true); } catch (_) {}
+          entrySound.set_text(toStore);
+          rowDefSound.set_visible(true);
           const idx = soundChoices.findIndex(([_, v]) => v === '__custom__');
           if (idx >= 0) dd.set_selected(idx);
         }
@@ -179,31 +178,25 @@ export function buildGeneralPage(settings) {
   const rowResetAll = new Adw.ActionRow({ subtitle: _('Restore all settings to schema defaults') });
   const btnResetAll = new Gtk.Button({ label: _('Restore all defaults') });
   btnResetAll.connect('clicked', () => {
-    try {
-      const keys = [
-        'enable-notification', 'enable-sound', 'volume', 'default-sound',
-        'panel-style', 'display-format', 'position-in-panel', 'panel-spacing',
-        'presets', 'repeat-enabled', 'repeat-count', 'repeat-interval-seconds', 'debug',
-      ];
-      keys.forEach(k => { try { settings.reset(k); } catch (_) {} });
-      try { swNotif.active = settings.get_boolean('enable-notification'); } catch (_) {}
-      try { swSound.active = settings.get_boolean('enable-sound'); } catch (_) {}
-      try { scaleVolume.set_value(settings.get_int('volume')); } catch (_) {}
-      try {
-        const cur = settings.get_string('default-sound') || '';
-        entrySound.set_text(cur);
-        let idx = soundChoices.findIndex(([_, val]) => val === cur || (val.startsWith('/') && val.endsWith(cur)));
-        if (idx < 0 && cur.startsWith('/')) {
-          const cidx = soundChoices.findIndex(([_, v]) => v === '__custom__');
-          if (cidx >= 0) idx = cidx;
-        }
-        if (idx >= 0) dd.set_selected(idx); else dd.set_selected(0);
-        const isCustom = soundChoices[dd.get_selected()] && soundChoices[dd.get_selected()][1] === '__custom__';
-        try { rowDefSound.set_visible(isCustom); } catch (_) {}
-      } catch (_) {}
-    } catch (e) {
-      console.warn('[yrtimer] prefs reset-all error:', e);
+    const keys = [
+      'enable-notification', 'enable-sound', 'volume', 'default-sound',
+      'panel-style', 'display-format', 'position-in-panel', 'panel-spacing',
+      'presets', 'repeat-enabled', 'repeat-count', 'repeat-interval-seconds',
+    ];
+    keys.forEach(k => { try { settings.reset(k); } catch (_) {} });
+    swNotif.active = settings.get_boolean('enable-notification');
+    swSound.active = settings.get_boolean('enable-sound');
+    scaleVolume.set_value(settings.get_int('volume'));
+    const cur = settings.get_string('default-sound') || '';
+    entrySound.set_text(cur);
+    let idx = soundChoices.findIndex(([_, val]) => val === cur || (val.startsWith('/') && val.endsWith(cur)));
+    if (idx < 0 && cur.startsWith('/')) {
+      const cidx = soundChoices.findIndex(([_, v]) => v === '__custom__');
+      if (cidx >= 0) idx = cidx;
     }
+    dd.set_selected(idx >= 0 ? idx : 0);
+    const isCustom = soundChoices[dd.get_selected()] && soundChoices[dd.get_selected()][1] === '__custom__';
+    rowDefSound.set_visible(isCustom);
   });
   rowResetAll.add_suffix(btnResetAll);
   grpResetAll.add(rowResetAll);

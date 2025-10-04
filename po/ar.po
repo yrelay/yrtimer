@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 10:28+0200\n"
+"POT-Creation-Date: 2025-10-04 18:05+0200\n"
 "PO-Revision-Date: 2025-09-10 20:48+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,213 +18,37 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=((n==0)?0:(n==1)?1:(n==2)?2:((n%100>=3 && "
 "n%100<=10)?3:((n%100>=11 && n%100<=99)?4:5)));\n"
 
-#: extension.js:44
+#: extension.js:48
 msgid "getSettings failed"
 msgstr ""
 
-#: extension.js:66
+#: extension.js:67
 msgid "Indicator add failed"
 msgstr ""
 
-#: extension.js:87
-msgid "State restore wired"
-msgstr ""
-
-#: extension.js:92
-msgid "restore/persist failed"
-msgstr ""
-
-#: prefs.js:80 prefs.js:81 prefs.js:542 prefs.js:543
+#: prefs.js:58 prefs.js:59
 msgid "About"
 msgstr "حول"
 
-#: prefs.js:82 prefs.js:546
+#: prefs.js:60
 msgid ""
 "For feature requests or bug reports, please visit GitHub. No warranty, "
 "express or implied."
 msgstr "طلبات الميزات أو الأخطاء؟ يُرجى زيارة GitHub. بلا أي ضمان صريح أو ضمني."
 
-#: prefs.js:88 prefs.js:553
+#: prefs.js:65
 msgid "GitHub"
 msgstr "GitHub"
 
-#: prefs.js:89 prefs.js:554
+#: prefs.js:66
 msgid "Issues"
 msgstr "المشكلات"
 
-#: prefs.js:90 prefs.js:555
+#: prefs.js:67
 msgid "Donate"
 msgstr "تبرع"
 
-#: prefs.js:105 prefs_pages/general.js:13
-msgid "General"
-msgstr "عام"
-
-#: prefs.js:108 prefs_pages/general.js:15
-msgid "Notifications & Sound"
-msgstr "الإشعارات والصوت"
-
-#: prefs.js:110 prefs_pages/general.js:17
-msgid "Enable notifications"
-msgstr "تفعيل الإشعارات"
-
-#: prefs.js:118 prefs_pages/general.js:25
-msgid "Enable sound"
-msgstr "تفعيل الصوت"
-
-#: prefs.js:126 prefs_pages/general.js:33
-msgid "Volume"
-msgstr "مستوى الصوت"
-
-#: prefs.js:137 prefs_pages/general.js:44
-msgid "Custom sound path (relative or absolute)"
-msgstr "مسار صوت مخصص (نسبي أو مطلق)"
-
-#: prefs.js:146 prefs_pages/general.js:175
-msgid "Sound"
-msgstr "الصوت"
-
-#: prefs.js:170 prefs_pages/general.js:72
-msgid "System: complete"
-msgstr "النظام: مكتمل"
-
-#: prefs.js:171 prefs_pages/general.js:73
-msgid "System: bell"
-msgstr "النظام: جرس"
-
-#: prefs.js:172 prefs_pages/general.js:74
-msgid "System: message-new-instant"
-msgstr "النظام: رسالة فورية جديدة"
-
-#: prefs.js:173 prefs_pages/general.js:75
-msgid "System: dialog-information"
-msgstr "النظام: مربع حوار معلومات"
-
-#: prefs.js:174 prefs_pages/general.js:76
-msgid "System: alarm-clock-elapsed"
-msgstr "النظام: انتهى وقت المنبّه"
-
-#: prefs.js:177 prefs.js:249 prefs_pages/general.js:79
-#: prefs_pages/general.js:135
-msgid "Custom…"
-msgstr "مخصص…"
-
-#: prefs.js:212 prefs_pages/general.js:108
-msgid "Preview"
-msgstr "معاينة"
-
-#: prefs.js:230 prefs_pages/general.js:116
-msgid "Sound preview"
-msgstr ""
-
-#: prefs.js:255 prefs.js:296 prefs_pages/general.js:140
-msgid "Select sound file"
-msgstr "اختر ملف صوت"
-
-#: prefs.js:261 prefs.js:304 prefs_pages/general.js:142
-msgid "Audio"
-msgstr "صوت"
-
-#: prefs.js:301
-msgid "_Cancel"
-msgstr "_إلغاء"
-
-#: prefs.js:302
-msgid "_Open"
-msgstr "_فتح"
-
-#: prefs.js:347 ui/indicator.js:647 ui/indicator.js:650
-#: prefs_pages/general.js:181
-msgid "Reset"
-msgstr "إعادة تعيين"
-
-#: prefs.js:348 prefs_pages/general.js:182
-msgid "Restore all settings to schema defaults"
-msgstr "استعادة كل الإعدادات إلى القيم الافتراضية للمخطط"
-
-#: prefs.js:349 prefs_pages/general.js:183
-msgid "Restore all defaults"
-msgstr "استعادة القيم الافتراضية"
-
-#: prefs.js:412 prefs.js:413 prefs_pages/panel.js:11 prefs_pages/panel.js:12
-msgid "Panel & Display"
-msgstr "اللوح والعرض"
-
-#: prefs.js:415 prefs_pages/panel.js:14
-msgid "Panel style (icon/text/both)"
-msgstr "نمط اللوح (أيقونة/نص/كلاهما)"
-
-#: prefs.js:423 prefs_pages/panel.js:22
-msgid "Display format"
-msgstr "تنسيق العرض"
-
-#: prefs.js:432 prefs_pages/panel.js:30
-msgid "Position in panel"
-msgstr "الموضع في اللوح"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Left"
-msgstr "يسار"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Center"
-msgstr "وسط"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Right"
-msgstr "يمين"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Far left"
-msgstr "أقصى اليسار"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Far right"
-msgstr "أقصى اليمين"
-
-#: prefs.js:444
-msgid "Panel spacing (px)"
-msgstr "تباعد اللوح (بكسل)"
-
-#: prefs.js:457 ui/indicator.js:275 ui/indicator.js:532 ui/indicator.js:673
-#: ui/indicator.js:675 prefs_pages/presets.js:11
-msgid "Presets"
-msgstr "إعدادات مسبقة"
-
-#: prefs.js:458 prefs_pages/presets.js:12
-msgid "Presets (comma-separated)"
-msgstr "إعدادات مسبقة (مفصولة بفواصل)"
-
-#: prefs.js:459 prefs_pages/presets.js:13
-msgid ""
-"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
-msgstr "يدعم اللاحقة m/s؛ الأعداد دون لاحقة = دقائق. أمثلة: 1s، 4m، 5m، 10، 25"
-
-#: prefs.js:470 prefs_pages/presets.js:20
-msgid "Save"
-msgstr "حفظ"
-
-#: prefs.js:493 prefs_pages/repeat.js:11
-msgid "Repetition"
-msgstr "تكرار"
-
-#: prefs.js:494 prefs_pages/repeat.js:12
-msgid "Repetition on completion"
-msgstr "تكرار عند الانتهاء"
-
-#: prefs.js:496 prefs_pages/repeat.js:14
-msgid "Enable repetition"
-msgstr "تفعيل التكرار"
-
-#: prefs.js:504 prefs_pages/repeat.js:22
-msgid "Repeat count"
-msgstr "عدد مرات التكرار"
-
-#: prefs.js:510 prefs_pages/repeat.js:28
-msgid "Repeat interval (seconds)"
-msgstr "فاصل التكرار (ثوانٍ)"
-
-#: ui/indicator.js:76 i18n/extra_strings.js:17
+#: ui/indicator.js:84 i18n/extra_strings.js:17
 msgid ""
 "Left: start/pause, Middle: reset, Shift+Left: last preset, Ctrl+Left: "
 "Preferences"
@@ -232,147 +56,208 @@ msgstr ""
 "الزر الأيسر: تشغيل/إيقاف مؤقت، الأوسط: إعادة تعيين، Shift+أيسر: آخر إعداد "
 "مسبق، Ctrl+أيسر: التفضيلات"
 
-#: ui/indicator.js:79 ui/indicator.js:96
+#: ui/indicator.js:87 ui/indicator.js:102
 msgid "yrtimer indicator"
 msgstr "مؤشّر yrtimer"
 
-#: ui/indicator.js:94
+#: ui/indicator.js:100
 msgid "Timer icon"
 msgstr "أيقونة المؤقّت"
 
-#: ui/indicator.js:95
+#: ui/indicator.js:101
 msgid "Remaining time"
 msgstr "الوقت المتبقي"
 
-#: ui/indicator.js:275 ui/indicator.js:533 ui/indicator.js:681
-#: ui/indicator.js:683
-msgid "Preferences"
-msgstr "التفضيلات"
-
-#: ui/indicator.js:277
-msgid "[i18n probe] Preferences"
-msgstr "[i18n] التفضيلات"
-
-#: ui/indicator.js:306
+#: ui/indicator.js:226
 msgid "Preset"
 msgstr "إعداد مسبق"
 
-#: ui/indicator.js:359 ui/indicator.js:368
+#: ui/indicator.js:277 ui/indicator.js:285
 msgid "Timer"
 msgstr "مؤقّت"
 
-#: ui/indicator.js:359 ui/indicator.js:368
+#: ui/indicator.js:277 ui/indicator.js:285
 msgid "Time is up!"
 msgstr "انتهى الوقت!"
 
-#: ui/indicator.js:544
+#: ui/indicator.js:435 ui/indicator.js:551 ui/indicator.js:552
+#: prefs_pages/presets.js:22
+msgid "Presets"
+msgstr "إعدادات مسبقة"
+
+#: ui/indicator.js:436 ui/indicator.js:557 ui/indicator.js:558
+msgid "Preferences"
+msgstr "التفضيلات"
+
+#: ui/indicator.js:446
 msgid "Enter duration (e.g., 1m 12s)"
 msgstr "أدخل المدّة (مثال: 1د 12ث)"
 
-#: ui/indicator.js:546
+#: ui/indicator.js:448
 msgid "Duration input"
 msgstr "إدخال المدّة"
 
-#: ui/indicator.js:645 ui/indicator.js:648
+#: ui/indicator.js:525 ui/indicator.js:528
 msgid "Start"
 msgstr "تشغيل"
 
-#: ui/indicator.js:646 ui/indicator.js:649
+#: ui/indicator.js:526 ui/indicator.js:529
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: prefs_pages/diag.js:12 prefs_pages/diag.js:15
-msgid "Diagnostics"
-msgstr "التشخيص"
+#: ui/indicator.js:527 ui/indicator.js:530 prefs_pages/general.js:177
+msgid "Reset"
+msgstr "إعادة تعيين"
 
-#: prefs_pages/diag.js:17
-msgid "Enable debug logs"
-msgstr "تفعيل سجلات التصحيح"
+#: prefs_pages/repeat.js:21
+msgid "Repetition"
+msgstr "تكرار"
 
-#: prefs_pages/diag.js:26
-msgid "Override locale for preferences"
-msgstr "تجاوز لغة التفضيلات"
+#: prefs_pages/repeat.js:22
+msgid "Repetition on completion"
+msgstr "تكرار عند الانتهاء"
 
-#: prefs_pages/diag.js:26
-msgid "Empty = system default (restart prefs to fully apply)"
-msgstr "فارغ = لغة النظام (أعد فتح التفضيلات لتطبيقها بالكامل)"
+#: prefs_pages/repeat.js:24
+msgid "Enable repetition"
+msgstr "تفعيل التكرار"
 
-#: prefs_pages/diag.js:27 prefs_pages/diag.js:44
-msgid "System default"
-msgstr "افتراضي النظام"
+#: prefs_pages/repeat.js:32
+msgid "Repeat count"
+msgstr "عدد مرات التكرار"
 
-#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
-msgid "Language changed"
-msgstr "تم تغيير اللغة"
+#: prefs_pages/repeat.js:38
+msgid "Repeat interval (seconds)"
+msgstr "فاصل التكرار (ثوانٍ)"
 
-#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
-msgid "Restarting preferences to apply translations..."
-msgstr "يُعاد تشغيل التفضيلات لتطبيق الترجمات..."
+#: prefs_pages/general.js:26
+msgid "General"
+msgstr "عام"
 
-#: prefs_pages/diag.js:59 prefs_pages/diag.js:87 prefs_pages/diag.js:222
-msgid "OK"
-msgstr "حسنًا"
+#: prefs_pages/general.js:27
+msgid "Notifications & Sound"
+msgstr "الإشعارات والصوت"
 
-#: prefs_pages/diag.js:81
-msgid "e.g., fr, de, zh_CN"
-msgstr "e.g., fr, de, zh_CN"
+#: prefs_pages/general.js:29
+msgid "Enable notifications"
+msgstr "تفعيل الإشعارات"
 
-#: prefs_pages/diag.js:113 prefs_pages/diag.js:166
-msgid "Extension path"
-msgstr "مسار الإضافة"
+#: prefs_pages/general.js:37
+msgid "Enable sound"
+msgstr "تفعيل الصوت"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "Icon (embedded)"
-msgstr "الأيقونة (مضمّنة)"
+#: prefs_pages/general.js:45
+msgid "Volume"
+msgstr "مستوى الصوت"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "exists"
-msgstr "موجود"
+#: prefs_pages/general.js:55
+msgid "Custom sound path (relative or absolute)"
+msgstr "مسار صوت مخصص (نسبي أو مطلق)"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "missing"
-msgstr "مفقود"
-
-#: prefs_pages/diag.js:123 prefs_pages/diag.js:196
-msgid "presets (sec)"
-msgstr "إعدادات مسبقة (ثوانٍ)"
-
-#: prefs_pages/diag.js:136
-msgid "Status and environment checks (Press Refresh to update)"
-msgstr "فحوصات الحالة والبيئة (اضغط تحديث للتحديث)"
-
-#: prefs_pages/diag.js:161
-msgid "Refresh"
-msgstr "تحديث"
-
-#: prefs_pages/diag.js:172
-msgid "GNOME Shell"
-msgstr "قشرة جنوم"
-
-#: prefs_pages/diag.js:182
-msgid "Extension state"
-msgstr "حالة الإضافة"
-
-#: prefs_pages/diag.js:184
-msgid "Extension info"
-msgstr "معلومات الإضافة"
-
-#: prefs_pages/diag.js:210
-msgid "Copy"
-msgstr "نسخ"
-
-#: prefs_pages/diag.js:221
-msgid "Diagnostics copied"
-msgstr "تم نسخ بيانات التشخيص"
-
-#: prefs_pages/diag.js:221
-msgid "Diagnostics have been copied to the clipboard."
-msgstr "تم نسخ بيانات التشخيص إلى الحافظة."
-
-#: prefs_pages/general.js:69
+#: prefs_pages/general.js:79
 msgid "Embedded"
 msgstr ""
 
-#: prefs_pages/general.js:81
+#: prefs_pages/general.js:82
+msgid "System: complete"
+msgstr "النظام: مكتمل"
+
+#: prefs_pages/general.js:83
+msgid "System: bell"
+msgstr "النظام: جرس"
+
+#: prefs_pages/general.js:84
+msgid "System: message-new-instant"
+msgstr "النظام: رسالة فورية جديدة"
+
+#: prefs_pages/general.js:85
+msgid "System: dialog-information"
+msgstr "النظام: مربع حوار معلومات"
+
+#: prefs_pages/general.js:86
+msgid "System: alarm-clock-elapsed"
+msgstr "النظام: انتهى وقت المنبّه"
+
+#: prefs_pages/general.js:88 prefs_pages/general.js:132
+msgid "Custom…"
+msgstr "مخصص…"
+
+#: prefs_pages/general.js:90
 msgid "(no sounds found)"
 msgstr ""
+
+#: prefs_pages/general.js:115
+msgid "Preview"
+msgstr "معاينة"
+
+#: prefs_pages/general.js:136
+msgid "Select sound file"
+msgstr "اختر ملف صوت"
+
+#: prefs_pages/general.js:138
+msgid "Audio"
+msgstr "صوت"
+
+#: prefs_pages/general.js:171
+msgid "Sound"
+msgstr "الصوت"
+
+#: prefs_pages/general.js:178
+msgid "Restore all settings to schema defaults"
+msgstr "استعادة كل الإعدادات إلى القيم الافتراضية للمخطط"
+
+#: prefs_pages/general.js:179
+msgid "Restore all defaults"
+msgstr "استعادة القيم الافتراضية"
+
+#: prefs_pages/presets.js:23
+msgid "Presets (comma-separated)"
+msgstr "إعدادات مسبقة (مفصولة بفواصل)"
+
+#: prefs_pages/presets.js:24
+msgid ""
+"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
+msgstr "يدعم اللاحقة m/s؛ الأعداد دون لاحقة = دقائق. أمثلة: 1s، 4m، 5m، 10، 25"
+
+#: prefs_pages/presets.js:31
+msgid "Save"
+msgstr "حفظ"
+
+#: prefs_pages/panel.js:21 prefs_pages/panel.js:22
+msgid "Panel & Display"
+msgstr "اللوح والعرض"
+
+#: prefs_pages/panel.js:25
+msgid "Panel style (icon/text/both)"
+msgstr "نمط اللوح (أيقونة/نص/كلاهما)"
+
+#: prefs_pages/panel.js:34
+msgid "Display format"
+msgstr "تنسيق العرض"
+
+#: prefs_pages/panel.js:43
+msgid "Position in panel"
+msgstr "الموضع في اللوح"
+
+#: prefs_pages/panel.js:44
+msgid "Left"
+msgstr "يسار"
+
+#: prefs_pages/panel.js:44
+msgid "Center"
+msgstr "وسط"
+
+#: prefs_pages/panel.js:44
+msgid "Right"
+msgstr "يمين"
+
+#: prefs_pages/panel.js:44
+msgid "Far left"
+msgstr "أقصى اليسار"
+
+#: prefs_pages/panel.js:44
+msgid "Far right"
+msgstr "أقصى اليمين"
+
+#: prefs_pages/panel.js:52
+msgid "Panel spacing (px)"
+msgstr "تباعد اللوح (بكسل)"

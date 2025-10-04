@@ -39,14 +39,17 @@ export function getCurrentExtension() {
   return { path: base, metadata: { 'gettext-domain': 'yrtimer', url: 'https://github.com/yrelay/yrtimer', uuid: 'yrtimer@yrelay.fr' } };
 }
 
+let _activeDomain = 'yrtimer';
+
 export function initTranslations(domain) {
   if (LegacyUtils && typeof LegacyUtils.initTranslations === 'function') {
-    try { LegacyUtils.initTranslations(domain); return; } catch (_) {}
+    try { LegacyUtils.initTranslations(domain); _activeDomain = domain || _activeDomain; return; } catch (_) {}
   }
   // Fallback: bind direct
   try {
     const base = getBasePathFromMeta();
     const d = domain || 'yrtimer';
+    _activeDomain = d;
     const localePath = `${base}/locale`;
     if (Gettext.bindtextdomain) Gettext.bindtextdomain(d, localePath);
     if (Gettext.bind_textdomain_codeset) Gettext.bind_textdomain_codeset(d, 'UTF-8');
@@ -61,4 +64,23 @@ export function openPrefs() {
     const proc = Gio.Subprocess.new(['gnome-extensions', 'prefs', 'yrtimer@yrelay.fr'], Gio.SubprocessFlags.STDOUT_SILENCE | Gio.SubprocessFlags.STDERR_SILENCE);
     proc.init(null);
   } catch (_) {}
+}
+
+// Simple gettext helpers bound to the active domain
+export function gettext(msg) {
+  try {
+    return Gettext.dgettext ? Gettext.dgettext(_activeDomain, String(msg)) : Gettext.domain(_activeDomain).gettext(String(msg));
+  } catch (_) { return String(msg); }
+}
+
+export function ngettext(singular, plural, n) {
+  try {
+    if (Gettext.dngettext)
+      return Gettext.dngettext(_activeDomain, String(singular), String(plural), Number(n));
+    // Fallback using selected domain interface if available
+    const dom = Gettext.domain ? Gettext.domain(_activeDomain) : null;
+    return dom && dom.ngettext ? dom.ngettext(String(singular), String(plural), Number(n)) : (Number(n) === 1 ? String(singular) : String(plural));
+  } catch (_) {
+    return Number(n) === 1 ? String(singular) : String(plural);
+  }
 }

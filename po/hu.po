@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 10:28+0200\n"
+"POT-Creation-Date: 2025-10-04 18:05+0200\n"
 "PO-Revision-Date: 2025-09-10 20:48+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,27 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extension.js:44
+#: extension.js:48
 msgid "getSettings failed"
 msgstr ""
 
-#: extension.js:66
+#: extension.js:67
 msgid "Indicator add failed"
 msgstr ""
 
-#: extension.js:87
-msgid "State restore wired"
-msgstr ""
-
-#: extension.js:92
-msgid "restore/persist failed"
-msgstr ""
-
-#: prefs.js:80 prefs.js:81 prefs.js:542 prefs.js:543
+#: prefs.js:58 prefs.js:59
 msgid "About"
 msgstr "Névjegy"
 
-#: prefs.js:82 prefs.js:546
+#: prefs.js:60
 msgid ""
 "For feature requests or bug reports, please visit GitHub. No warranty, "
 "express or implied."
@@ -45,189 +37,19 @@ msgstr ""
 "Funkciókérésekhez vagy hibajelentésekhez látogasson el a GitHubra. Jótállás "
 "nélkül, kifejezett vagy hallgatólagos."
 
-#: prefs.js:88 prefs.js:553
+#: prefs.js:65
 msgid "GitHub"
 msgstr "GitHub"
 
-#: prefs.js:89 prefs.js:554
+#: prefs.js:66
 msgid "Issues"
 msgstr "Problémák"
 
-#: prefs.js:90 prefs.js:555
+#: prefs.js:67
 msgid "Donate"
 msgstr "Adományozás"
 
-#: prefs.js:105 prefs_pages/general.js:13
-msgid "General"
-msgstr "Általános"
-
-#: prefs.js:108 prefs_pages/general.js:15
-msgid "Notifications & Sound"
-msgstr "Értesítések és hang"
-
-#: prefs.js:110 prefs_pages/general.js:17
-msgid "Enable notifications"
-msgstr "Értesítések engedélyezése"
-
-#: prefs.js:118 prefs_pages/general.js:25
-msgid "Enable sound"
-msgstr "Hang engedélyezése"
-
-#: prefs.js:126 prefs_pages/general.js:33
-msgid "Volume"
-msgstr "Hangerő"
-
-#: prefs.js:137 prefs_pages/general.js:44
-msgid "Custom sound path (relative or absolute)"
-msgstr "Egyéni hangútvonal (relatív vagy abszolút)"
-
-#: prefs.js:146 prefs_pages/general.js:175
-msgid "Sound"
-msgstr "Hang"
-
-#: prefs.js:170 prefs_pages/general.js:72
-msgid "System: complete"
-msgstr "System: complete"
-
-#: prefs.js:171 prefs_pages/general.js:73
-msgid "System: bell"
-msgstr "System: bell"
-
-#: prefs.js:172 prefs_pages/general.js:74
-msgid "System: message-new-instant"
-msgstr "System: message-new-instant"
-
-#: prefs.js:173 prefs_pages/general.js:75
-msgid "System: dialog-information"
-msgstr "System: dialog-information"
-
-#: prefs.js:174 prefs_pages/general.js:76
-msgid "System: alarm-clock-elapsed"
-msgstr "System: alarm-clock-elapsed"
-
-#: prefs.js:177 prefs.js:249 prefs_pages/general.js:79
-#: prefs_pages/general.js:135
-msgid "Custom…"
-msgstr "Egyéni…"
-
-#: prefs.js:212 prefs_pages/general.js:108
-msgid "Preview"
-msgstr "Előnézet"
-
-#: prefs.js:230 prefs_pages/general.js:116
-msgid "Sound preview"
-msgstr ""
-
-#: prefs.js:255 prefs.js:296 prefs_pages/general.js:140
-msgid "Select sound file"
-msgstr "Hangfájl kiválasztása"
-
-#: prefs.js:261 prefs.js:304 prefs_pages/general.js:142
-msgid "Audio"
-msgstr "Hang"
-
-#: prefs.js:301
-msgid "_Cancel"
-msgstr "_Mégse"
-
-#: prefs.js:302
-msgid "_Open"
-msgstr "_Megnyitás"
-
-#: prefs.js:347 ui/indicator.js:647 ui/indicator.js:650
-#: prefs_pages/general.js:181
-msgid "Reset"
-msgstr "Visszaállítás"
-
-#: prefs.js:348 prefs_pages/general.js:182
-msgid "Restore all settings to schema defaults"
-msgstr "Minden beállítás visszaállítása a séma alapértelmezéseire"
-
-#: prefs.js:349 prefs_pages/general.js:183
-msgid "Restore all defaults"
-msgstr "Alapértelmezések visszaállítása"
-
-#: prefs.js:412 prefs.js:413 prefs_pages/panel.js:11 prefs_pages/panel.js:12
-msgid "Panel & Display"
-msgstr "Panel és megjelenítés"
-
-#: prefs.js:415 prefs_pages/panel.js:14
-msgid "Panel style (icon/text/both)"
-msgstr "Panel stílusa (ikon/szöveg/mindkettő)"
-
-#: prefs.js:423 prefs_pages/panel.js:22
-msgid "Display format"
-msgstr "Megjelenítési formátum"
-
-#: prefs.js:432 prefs_pages/panel.js:30
-msgid "Position in panel"
-msgstr "Pozíció a panelen"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Left"
-msgstr "Balra"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Center"
-msgstr "Középre"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Right"
-msgstr "Jobbra"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Far left"
-msgstr "Szélső bal"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Far right"
-msgstr "Szélső jobb"
-
-#: prefs.js:444
-msgid "Panel spacing (px)"
-msgstr "Panel térköz (px)"
-
-#: prefs.js:457 ui/indicator.js:275 ui/indicator.js:532 ui/indicator.js:673
-#: ui/indicator.js:675 prefs_pages/presets.js:11
-msgid "Presets"
-msgstr "Előbeállítások"
-
-#: prefs.js:458 prefs_pages/presets.js:12
-msgid "Presets (comma-separated)"
-msgstr "Előbeállítások (vesszővel elválasztva)"
-
-#: prefs.js:459 prefs_pages/presets.js:13
-msgid ""
-"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
-msgstr ""
-"Támogatja az m/s utótagot; a puszta számok = percek. Példák: 1s, 4m, 5m, 10, "
-"25"
-
-#: prefs.js:470 prefs_pages/presets.js:20
-msgid "Save"
-msgstr "Mentés"
-
-#: prefs.js:493 prefs_pages/repeat.js:11
-msgid "Repetition"
-msgstr "Ismétlés"
-
-#: prefs.js:494 prefs_pages/repeat.js:12
-msgid "Repetition on completion"
-msgstr "Ismétlés befejezéskor"
-
-#: prefs.js:496 prefs_pages/repeat.js:14
-msgid "Enable repetition"
-msgstr "Ismétlés engedélyezése"
-
-#: prefs.js:504 prefs_pages/repeat.js:22
-msgid "Repeat count"
-msgstr "Ismétlések száma"
-
-#: prefs.js:510 prefs_pages/repeat.js:28
-msgid "Repeat interval (seconds)"
-msgstr "Ismétlési intervallum (másodperc)"
-
-#: ui/indicator.js:76 i18n/extra_strings.js:17
+#: ui/indicator.js:84 i18n/extra_strings.js:17
 msgid ""
 "Left: start/pause, Middle: reset, Shift+Left: last preset, Ctrl+Left: "
 "Preferences"
@@ -235,151 +57,210 @@ msgstr ""
 "Bal: indítás/szünet, Középső: visszaállítás, Shift+Bal: utolsó előbeállítás, "
 "Ctrl+Bal: Beállítások"
 
-#: ui/indicator.js:79 ui/indicator.js:96
+#: ui/indicator.js:87 ui/indicator.js:102
 msgid "yrtimer indicator"
 msgstr "yrtimer jelző"
 
-#: ui/indicator.js:94
+#: ui/indicator.js:100
 msgid "Timer icon"
 msgstr "Időzítő ikon"
 
-#: ui/indicator.js:95
+#: ui/indicator.js:101
 msgid "Remaining time"
 msgstr "Hátralévő idő"
 
-#: ui/indicator.js:275 ui/indicator.js:533 ui/indicator.js:681
-#: ui/indicator.js:683
-msgid "Preferences"
-msgstr "Beállítások"
-
-#: ui/indicator.js:277
-msgid "[i18n probe] Preferences"
-msgstr "[i18n] Beállítások"
-
-#: ui/indicator.js:306
+#: ui/indicator.js:226
 msgid "Preset"
 msgstr "Előbeállítás"
 
-#: ui/indicator.js:359 ui/indicator.js:368
+#: ui/indicator.js:277 ui/indicator.js:285
 msgid "Timer"
 msgstr "Időzítő"
 
-#: ui/indicator.js:359 ui/indicator.js:368
+#: ui/indicator.js:277 ui/indicator.js:285
 msgid "Time is up!"
 msgstr "Lejárt az idő!"
 
-#: ui/indicator.js:544
+#: ui/indicator.js:435 ui/indicator.js:551 ui/indicator.js:552
+#: prefs_pages/presets.js:22
+msgid "Presets"
+msgstr "Előbeállítások"
+
+#: ui/indicator.js:436 ui/indicator.js:557 ui/indicator.js:558
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: ui/indicator.js:446
 msgid "Enter duration (e.g., 1m 12s)"
 msgstr "Adja meg az időtartamot (pl. 1m 12s)"
 
-#: ui/indicator.js:546
+#: ui/indicator.js:448
 msgid "Duration input"
 msgstr "Időtartam bevitel"
 
-#: ui/indicator.js:645 ui/indicator.js:648
+#: ui/indicator.js:525 ui/indicator.js:528
 msgid "Start"
 msgstr "Indítás"
 
-#: ui/indicator.js:646 ui/indicator.js:649
+#: ui/indicator.js:526 ui/indicator.js:529
 msgid "Pause"
 msgstr "Szünet"
 
-#: prefs_pages/diag.js:12 prefs_pages/diag.js:15
-msgid "Diagnostics"
-msgstr "Diagnosztika"
+#: ui/indicator.js:527 ui/indicator.js:530 prefs_pages/general.js:177
+msgid "Reset"
+msgstr "Visszaállítás"
 
-#: prefs_pages/diag.js:17
-msgid "Enable debug logs"
-msgstr "Hibakeresési naplók engedélyezése"
+#: prefs_pages/repeat.js:21
+msgid "Repetition"
+msgstr "Ismétlés"
 
-#: prefs_pages/diag.js:26
-msgid "Override locale for preferences"
-msgstr "Területi beállítás felülbírálása a beállításokhoz"
+#: prefs_pages/repeat.js:22
+msgid "Repetition on completion"
+msgstr "Ismétlés befejezéskor"
 
-#: prefs_pages/diag.js:26
-msgid "Empty = system default (restart prefs to fully apply)"
-msgstr ""
-"Üres = rendszer alapértelmezett (indítsa újra a beállításokat a teljes "
-"alkalmazáshoz)"
+#: prefs_pages/repeat.js:24
+msgid "Enable repetition"
+msgstr "Ismétlés engedélyezése"
 
-#: prefs_pages/diag.js:27 prefs_pages/diag.js:44
-msgid "System default"
-msgstr "Rendszer alapértelmezett"
+#: prefs_pages/repeat.js:32
+msgid "Repeat count"
+msgstr "Ismétlések száma"
 
-#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
-msgid "Language changed"
-msgstr "Nyelv megváltozott"
+#: prefs_pages/repeat.js:38
+msgid "Repeat interval (seconds)"
+msgstr "Ismétlési intervallum (másodperc)"
 
-#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
-msgid "Restarting preferences to apply translations..."
-msgstr "A beállítások újraindítása a fordítások alkalmazásához..."
+#: prefs_pages/general.js:26
+msgid "General"
+msgstr "Általános"
 
-#: prefs_pages/diag.js:59 prefs_pages/diag.js:87 prefs_pages/diag.js:222
-msgid "OK"
-msgstr "OK"
+#: prefs_pages/general.js:27
+msgid "Notifications & Sound"
+msgstr "Értesítések és hang"
 
-#: prefs_pages/diag.js:81
-msgid "e.g., fr, de, zh_CN"
-msgstr "pl.: fr, de, zh_CN"
+#: prefs_pages/general.js:29
+msgid "Enable notifications"
+msgstr "Értesítések engedélyezése"
 
-#: prefs_pages/diag.js:113 prefs_pages/diag.js:166
-msgid "Extension path"
-msgstr "Bővítmény elérési útja"
+#: prefs_pages/general.js:37
+msgid "Enable sound"
+msgstr "Hang engedélyezése"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "Icon (embedded)"
-msgstr "Ikon (beágyazott)"
+#: prefs_pages/general.js:45
+msgid "Volume"
+msgstr "Hangerő"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "exists"
-msgstr "létezik"
+#: prefs_pages/general.js:55
+msgid "Custom sound path (relative or absolute)"
+msgstr "Egyéni hangútvonal (relatív vagy abszolút)"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "missing"
-msgstr "hiányzik"
-
-#: prefs_pages/diag.js:123 prefs_pages/diag.js:196
-msgid "presets (sec)"
-msgstr "előbeállítások (mp)"
-
-#: prefs_pages/diag.js:136
-msgid "Status and environment checks (Press Refresh to update)"
-msgstr ""
-"Állapot- és környezeti ellenőrzések (Nyomja meg a Frissítés gombot a "
-"frissítéshez)"
-
-#: prefs_pages/diag.js:161
-msgid "Refresh"
-msgstr "Frissítés"
-
-#: prefs_pages/diag.js:172
-msgid "GNOME Shell"
-msgstr "GNOME Shell"
-
-#: prefs_pages/diag.js:182
-msgid "Extension state"
-msgstr "Bővítmény állapota"
-
-#: prefs_pages/diag.js:184
-msgid "Extension info"
-msgstr "Bővítmény információ"
-
-#: prefs_pages/diag.js:210
-msgid "Copy"
-msgstr "Másolás"
-
-#: prefs_pages/diag.js:221
-msgid "Diagnostics copied"
-msgstr "Diagnosztika másolva"
-
-#: prefs_pages/diag.js:221
-msgid "Diagnostics have been copied to the clipboard."
-msgstr "A diagnosztika a vágólapra lett másolva."
-
-#: prefs_pages/general.js:69
+#: prefs_pages/general.js:79
 msgid "Embedded"
 msgstr ""
 
-#: prefs_pages/general.js:81
+#: prefs_pages/general.js:82
+msgid "System: complete"
+msgstr "System: complete"
+
+#: prefs_pages/general.js:83
+msgid "System: bell"
+msgstr "System: bell"
+
+#: prefs_pages/general.js:84
+msgid "System: message-new-instant"
+msgstr "System: message-new-instant"
+
+#: prefs_pages/general.js:85
+msgid "System: dialog-information"
+msgstr "System: dialog-information"
+
+#: prefs_pages/general.js:86
+msgid "System: alarm-clock-elapsed"
+msgstr "System: alarm-clock-elapsed"
+
+#: prefs_pages/general.js:88 prefs_pages/general.js:132
+msgid "Custom…"
+msgstr "Egyéni…"
+
+#: prefs_pages/general.js:90
 msgid "(no sounds found)"
 msgstr ""
+
+#: prefs_pages/general.js:115
+msgid "Preview"
+msgstr "Előnézet"
+
+#: prefs_pages/general.js:136
+msgid "Select sound file"
+msgstr "Hangfájl kiválasztása"
+
+#: prefs_pages/general.js:138
+msgid "Audio"
+msgstr "Hang"
+
+#: prefs_pages/general.js:171
+msgid "Sound"
+msgstr "Hang"
+
+#: prefs_pages/general.js:178
+msgid "Restore all settings to schema defaults"
+msgstr "Minden beállítás visszaállítása a séma alapértelmezéseire"
+
+#: prefs_pages/general.js:179
+msgid "Restore all defaults"
+msgstr "Alapértelmezések visszaállítása"
+
+#: prefs_pages/presets.js:23
+msgid "Presets (comma-separated)"
+msgstr "Előbeállítások (vesszővel elválasztva)"
+
+#: prefs_pages/presets.js:24
+msgid ""
+"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
+msgstr ""
+"Támogatja az m/s utótagot; a puszta számok = percek. Példák: 1s, 4m, 5m, 10, "
+"25"
+
+#: prefs_pages/presets.js:31
+msgid "Save"
+msgstr "Mentés"
+
+#: prefs_pages/panel.js:21 prefs_pages/panel.js:22
+msgid "Panel & Display"
+msgstr "Panel és megjelenítés"
+
+#: prefs_pages/panel.js:25
+msgid "Panel style (icon/text/both)"
+msgstr "Panel stílusa (ikon/szöveg/mindkettő)"
+
+#: prefs_pages/panel.js:34
+msgid "Display format"
+msgstr "Megjelenítési formátum"
+
+#: prefs_pages/panel.js:43
+msgid "Position in panel"
+msgstr "Pozíció a panelen"
+
+#: prefs_pages/panel.js:44
+msgid "Left"
+msgstr "Balra"
+
+#: prefs_pages/panel.js:44
+msgid "Center"
+msgstr "Középre"
+
+#: prefs_pages/panel.js:44
+msgid "Right"
+msgstr "Jobbra"
+
+#: prefs_pages/panel.js:44
+msgid "Far left"
+msgstr "Szélső bal"
+
+#: prefs_pages/panel.js:44
+msgid "Far right"
+msgstr "Szélső jobb"
+
+#: prefs_pages/panel.js:52
+msgid "Panel spacing (px)"
+msgstr "Panel térköz (px)"

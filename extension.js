@@ -11,8 +11,6 @@ import GLib from 'gi://GLib';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as ExtensionUtils from './core/extensionUtilsCompat.js';
 
-// Gettext
-import Gettext from 'gettext';
 
 // Internal modules
 import { getSettings } from './core/settings.js';
@@ -20,17 +18,13 @@ import { Indicator as IndicatorClass } from './ui/indicator.js';
 
 let _ = (s) => s;
 
-function _shouldDebug(settings) {
-  try { return settings && settings.get_boolean && settings.get_boolean('debug'); } catch (_) { return false; }
-}
-
 export default class Extension {
   constructor(uuid) {
     try {
       const Me = ExtensionUtils.getCurrentExtension();
       const domain = (Me && Me.metadata && Me.metadata['gettext-domain']) || 'yrtimer';
       try { ExtensionUtils.initTranslations(domain); } catch (_) {}
-      try { _ = Gettext.domain(domain).gettext; } catch (_) {}
+      _ = ExtensionUtils.gettext;
     } catch (_) {}
     this._indicator = null;
     this._settings = null;
@@ -40,13 +34,7 @@ export default class Extension {
     const Me = ExtensionUtils.getCurrentExtension();
     const baseDir = Me.path;
 
-    try {
-      console.log('[yrtimer] enable() entered');
-      const f = Gio.File.new_for_path(`${baseDir}/.last-enable`);
-      const encoder = new TextEncoder();
-      const bytes = encoder.encode(String(new Date().toISOString()));
-      f.replace_contents(bytes, null, false, Gio.FileCreateFlags.REPLACE_DESTINATION, null);
-    } catch (_) {}
+    try { console.log('[yrtimer] enable() entered'); } catch (_) {}
 
     const IndicatorCtor = IndicatorClass;
     try { this._settings = getSettings ? getSettings() : null; } catch (e) {
@@ -90,10 +78,10 @@ export default class Extension {
           this._settings.set_string('last-state', payload);
         };
         t.onChanged(persist);
-        try { if (_shouldDebug(this._settings)) Main.notify('yrtimer', _(`State restore wired`)); else console.log('[yrtimer] State restore wired'); } catch (_) {}
+        console.log('[yrtimer] State restore wired');
       }
     } catch (e) {
-      try { console.error('[yrtimer] restore/persist failed:', e); Main.notify('yrtimer', `${_('restore/persist failed')}: ${e}`); } catch (_) {}
+      console.error('[yrtimer] restore/persist failed:', e);
     }
   }
 

@@ -1,0 +1,381 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-14 10:28+0200\n"
+"PO-Revision-Date: 2025-09-13 00:00+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Tamil <ta@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: extension.js:44
+msgid "getSettings failed"
+msgstr ""
+
+#: extension.js:66
+msgid "Indicator add failed"
+msgstr ""
+
+#: extension.js:87
+msgid "State restore wired"
+msgstr ""
+
+#: extension.js:92
+msgid "restore/persist failed"
+msgstr ""
+
+#: prefs.js:80 prefs.js:81 prefs.js:542 prefs.js:543
+msgid "About"
+msgstr "பற்றி"
+
+#: prefs.js:82 prefs.js:546
+msgid ""
+"For feature requests or bug reports, please visit GitHub. No warranty, "
+"express or implied."
+msgstr ""
+"அம்ச கோரிக்கைகள் அல்லது பிழை அறிக்கைகளுக்கு GitHub ஐ அணுகவும். வெளிப்படையான அல்லது "
+"மறைமுகமான எந்த உத்தரவாதமும் இல்லை."
+
+#: prefs.js:88 prefs.js:553
+msgid "GitHub"
+msgstr "GitHub"
+
+#: prefs.js:89 prefs.js:554
+msgid "Issues"
+msgstr "சிக்கல்கள்"
+
+#: prefs.js:90 prefs.js:555
+msgid "Donate"
+msgstr "நன்கொடை"
+
+#: prefs.js:105 prefs_pages/general.js:13
+msgid "General"
+msgstr "பொது"
+
+#: prefs.js:108 prefs_pages/general.js:15
+msgid "Notifications & Sound"
+msgstr "அறிவிப்புகள் & ஒலி"
+
+#: prefs.js:110 prefs_pages/general.js:17
+msgid "Enable notifications"
+msgstr "அறிவிப்புகளை இயக்கு"
+
+#: prefs.js:118 prefs_pages/general.js:25
+msgid "Enable sound"
+msgstr "ஒலியை இயக்கு"
+
+#: prefs.js:126 prefs_pages/general.js:33
+msgid "Volume"
+msgstr "ஒலி அளவு"
+
+#: prefs.js:137 prefs_pages/general.js:44
+msgid "Custom sound path (relative or absolute)"
+msgstr "தனிப்பயன் ஒலி பாதை (சார்பு அல்லது முழுமை)"
+
+#: prefs.js:146 prefs_pages/general.js:175
+msgid "Sound"
+msgstr "ஒலி"
+
+#: prefs.js:170 prefs_pages/general.js:72
+msgid "System: complete"
+msgstr "System: complete"
+
+#: prefs.js:171 prefs_pages/general.js:73
+msgid "System: bell"
+msgstr "System: bell"
+
+#: prefs.js:172 prefs_pages/general.js:74
+msgid "System: message-new-instant"
+msgstr "System: message-new-instant"
+
+#: prefs.js:173 prefs_pages/general.js:75
+msgid "System: dialog-information"
+msgstr "System: dialog-information"
+
+#: prefs.js:174 prefs_pages/general.js:76
+msgid "System: alarm-clock-elapsed"
+msgstr "System: alarm-clock-elapsed"
+
+#: prefs.js:177 prefs.js:249 prefs_pages/general.js:79
+#: prefs_pages/general.js:135
+msgid "Custom…"
+msgstr "தனிப்பயன்…"
+
+#: prefs.js:212 prefs_pages/general.js:108
+msgid "Preview"
+msgstr "முன்னோட்டம்"
+
+#: prefs.js:230 prefs_pages/general.js:116
+msgid "Sound preview"
+msgstr ""
+
+#: prefs.js:255 prefs.js:296 prefs_pages/general.js:140
+msgid "Select sound file"
+msgstr "ஒலி கோப்பை தேர்ந்தெடு"
+
+#: prefs.js:261 prefs.js:304 prefs_pages/general.js:142
+msgid "Audio"
+msgstr "ஆடியோ"
+
+#: prefs.js:301
+msgid "_Cancel"
+msgstr "_ரத்து"
+
+#: prefs.js:302
+msgid "_Open"
+msgstr "_திற"
+
+#: prefs.js:347 ui/indicator.js:647 ui/indicator.js:650
+#: prefs_pages/general.js:181
+msgid "Reset"
+msgstr "மீட்டமை"
+
+#: prefs.js:348 prefs_pages/general.js:182
+msgid "Restore all settings to schema defaults"
+msgstr "அனைத்து அமைப்புகளையும் திட்டப்படியின் இயல்புகளிற்கு மீட்டமை"
+
+#: prefs.js:349 prefs_pages/general.js:183
+msgid "Restore all defaults"
+msgstr "அனைத்து இயல்புகளை மீட்டமை"
+
+#: prefs.js:412 prefs.js:413 prefs_pages/panel.js:11 prefs_pages/panel.js:12
+msgid "Panel & Display"
+msgstr "தகடு & காட்சி"
+
+#: prefs.js:415 prefs_pages/panel.js:14
+msgid "Panel style (icon/text/both)"
+msgstr "தகடு பாணி (சின்னம்/உரை/இரண்டும்)"
+
+#: prefs.js:423 prefs_pages/panel.js:22
+msgid "Display format"
+msgstr "காட்சி வடிவம்"
+
+#: prefs.js:432 prefs_pages/panel.js:30
+msgid "Position in panel"
+msgstr "தகடில் இருப்பிடம்"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Left"
+msgstr "இடது"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Center"
+msgstr "மையம்"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Right"
+msgstr "வலது"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Far left"
+msgstr "மிகவும் இடது"
+
+#: prefs.js:433 prefs_pages/panel.js:31
+msgid "Far right"
+msgstr "மிகவும் வலது"
+
+#: prefs.js:444
+msgid "Panel spacing (px)"
+msgstr "தகடு இடைவெளி (px)"
+
+#: prefs.js:457 ui/indicator.js:275 ui/indicator.js:532 ui/indicator.js:673
+#: ui/indicator.js:675 prefs_pages/presets.js:11
+msgid "Presets"
+msgstr "முன்நிறுவல்கள்"
+
+#: prefs.js:458 prefs_pages/presets.js:12
+msgid "Presets (comma-separated)"
+msgstr "முன்நிறுவல்கள் (கமாவில் பிரிக்கப்பட்ட)"
+
+#: prefs.js:459 prefs_pages/presets.js:13
+msgid ""
+"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
+msgstr ""
+"m/s பிற்சேர்க்கையை ஆதரிக்கிறது; வெறும் எண்கள் = நிமிடங்கள். உதாரணங்கள்: 1s, 4m, 5m, 10, "
+"25"
+
+#: prefs.js:470 prefs_pages/presets.js:20
+msgid "Save"
+msgstr "சேமிக்க"
+
+#: prefs.js:493 prefs_pages/repeat.js:11
+msgid "Repetition"
+msgstr "மீளல்"
+
+#: prefs.js:494 prefs_pages/repeat.js:12
+msgid "Repetition on completion"
+msgstr "முடிவில் மீண்டும் இயக்குதல்"
+
+#: prefs.js:496 prefs_pages/repeat.js:14
+msgid "Enable repetition"
+msgstr "மீளலை இயக்கு"
+
+#: prefs.js:504 prefs_pages/repeat.js:22
+msgid "Repeat count"
+msgstr "மீளல் எண்ணிக்கை"
+
+#: prefs.js:510 prefs_pages/repeat.js:28
+msgid "Repeat interval (seconds)"
+msgstr "மீளல் இடைவெளி (விநாடிகள்)"
+
+#: ui/indicator.js:76 i18n/extra_strings.js:17
+msgid ""
+"Left: start/pause, Middle: reset, Shift+Left: last preset, Ctrl+Left: "
+"Preferences"
+msgstr ""
+"இடது: தொடங்கு/இடைநிறுத்து, நடுப்பு: மீட்டமை, Shift+இடது: கடைசி முன்நிறுவல், "
+"Ctrl+இடது: விருப்பங்கள்"
+
+#: ui/indicator.js:79 ui/indicator.js:96
+msgid "yrtimer indicator"
+msgstr "yrtimer குறியீடு"
+
+#: ui/indicator.js:94
+msgid "Timer icon"
+msgstr "நேரக்கணிக்கையின் சின்னம்"
+
+#: ui/indicator.js:95
+msgid "Remaining time"
+msgstr "மீதமுள்ள நேரம்"
+
+#: ui/indicator.js:275 ui/indicator.js:533 ui/indicator.js:681
+#: ui/indicator.js:683
+msgid "Preferences"
+msgstr "விருப்பங்கள்"
+
+#: ui/indicator.js:277
+msgid "[i18n probe] Preferences"
+msgstr "[i18n] விருப்பங்கள்"
+
+#: ui/indicator.js:306
+msgid "Preset"
+msgstr "முன்நிறுவல்"
+
+#: ui/indicator.js:359 ui/indicator.js:368
+msgid "Timer"
+msgstr "நேரக்கணிக்கையாளர்"
+
+#: ui/indicator.js:359 ui/indicator.js:368
+msgid "Time is up!"
+msgstr "நேரம் முடிந்தது!"
+
+#: ui/indicator.js:544
+msgid "Enter duration (e.g., 1m 12s)"
+msgstr "காலநேரத்தை உள்ளிடவும் (எ.கா., 1m 12s)"
+
+#: ui/indicator.js:546
+msgid "Duration input"
+msgstr "காலநேர உள்ளீடு"
+
+#: ui/indicator.js:645 ui/indicator.js:648
+msgid "Start"
+msgstr "தொடங்கு"
+
+#: ui/indicator.js:646 ui/indicator.js:649
+msgid "Pause"
+msgstr "இடைநிறுத்து"
+
+#: prefs_pages/diag.js:12 prefs_pages/diag.js:15
+msgid "Diagnostics"
+msgstr "உறுதிப்பறிக்கை"
+
+#: prefs_pages/diag.js:17
+msgid "Enable debug logs"
+msgstr "பிழைத்திருத்தப் பதிவுகளை இயக்கு"
+
+#: prefs_pages/diag.js:26
+msgid "Override locale for preferences"
+msgstr "விருப்பங்களுக்கான மொழியை மீளமை"
+
+#: prefs_pages/diag.js:26
+msgid "Empty = system default (restart prefs to fully apply)"
+msgstr "வெற்று = கணினி இயல்பு (முழுவதும் அமல்படுத்த மறுதொடக்கம் தேவை)"
+
+#: prefs_pages/diag.js:27 prefs_pages/diag.js:44
+msgid "System default"
+msgstr "கணினி இயல்பு"
+
+#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
+msgid "Language changed"
+msgstr "மொழி மாற்றப்பட்டது"
+
+#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
+msgid "Restarting preferences to apply translations..."
+msgstr "மொழிபெயர்ப்புகளைச் செயல்படுத்த விருப்பங்கள் மறுதொடக்கம் செய்யப்படுகிறது..."
+
+#: prefs_pages/diag.js:59 prefs_pages/diag.js:87 prefs_pages/diag.js:222
+msgid "OK"
+msgstr "OK"
+
+#: prefs_pages/diag.js:81
+msgid "e.g., fr, de, zh_CN"
+msgstr "எ.கா., fr, de, zh_CN"
+
+#: prefs_pages/diag.js:113 prefs_pages/diag.js:166
+msgid "Extension path"
+msgstr "நீட்டிப்பு பாதை"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "Icon (embedded)"
+msgstr "சின்னம் (உட்பொதிக்கப்பட்ட)"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "exists"
+msgstr "உள்ளது"
+
+#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
+msgid "missing"
+msgstr "இல்லை"
+
+#: prefs_pages/diag.js:123 prefs_pages/diag.js:196
+msgid "presets (sec)"
+msgstr "முன்நிறுவல்கள் (வி)"
+
+#: prefs_pages/diag.js:136
+msgid "Status and environment checks (Press Refresh to update)"
+msgstr "நிலையும் சூழலும் சோதனைகள் (புதுப்பிக்க Refresh அழுத்தவும்)"
+
+#: prefs_pages/diag.js:161
+msgid "Refresh"
+msgstr "புதுப்பிக்க"
+
+#: prefs_pages/diag.js:172
+msgid "GNOME Shell"
+msgstr "GNOME Shell"
+
+#: prefs_pages/diag.js:182
+msgid "Extension state"
+msgstr "நீட்டிப்பு நிலை"
+
+#: prefs_pages/diag.js:184
+msgid "Extension info"
+msgstr "நீட்டிப்பு தகவல்"
+
+#: prefs_pages/diag.js:210
+msgid "Copy"
+msgstr "நகலெடு"
+
+#: prefs_pages/diag.js:221
+msgid "Diagnostics copied"
+msgstr "உறுதிப்பறிக்கை நகலெடுக்கப்பட்டது"
+
+#: prefs_pages/diag.js:221
+msgid "Diagnostics have been copied to the clipboard."
+msgstr "உறுதிப்பறிக்கை கிளிப் போர்ட்டுக்கு நகலெடுக்கப்பட்டது."
+
+#: prefs_pages/general.js:69
+msgid "Embedded"
+msgstr ""
+
+#: prefs_pages/general.js:81
+msgid "(no sounds found)"
+msgstr ""

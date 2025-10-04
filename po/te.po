@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 10:28+0200\n"
+"POT-Creation-Date: 2025-10-04 18:05+0200\n"
 "PO-Revision-Date: 2025-09-13 00:00+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Telugu <te@li.org>\n"
@@ -17,27 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extension.js:44
+#: extension.js:48
 msgid "getSettings failed"
 msgstr ""
 
-#: extension.js:66
+#: extension.js:67
 msgid "Indicator add failed"
 msgstr ""
 
-#: extension.js:87
-msgid "State restore wired"
-msgstr ""
-
-#: extension.js:92
-msgid "restore/persist failed"
-msgstr ""
-
-#: prefs.js:80 prefs.js:81 prefs.js:542 prefs.js:543
+#: prefs.js:58 prefs.js:59
 msgid "About"
 msgstr "గురించి"
 
-#: prefs.js:82 prefs.js:546
+#: prefs.js:60
 msgid ""
 "For feature requests or bug reports, please visit GitHub. No warranty, "
 "express or implied."
@@ -45,334 +37,227 @@ msgstr ""
 "For feature requests or bug reports, please visit GitHub. No warranty, "
 "express or implied."
 
-#: prefs.js:88 prefs.js:553
+#: prefs.js:65
 msgid "GitHub"
 msgstr "GitHub"
 
-#: prefs.js:89 prefs.js:554
+#: prefs.js:66
 msgid "Issues"
 msgstr "సమస్యలు"
 
-#: prefs.js:90 prefs.js:555
+#: prefs.js:67
 msgid "Donate"
 msgstr "దానం చేయండి"
 
-#: prefs.js:105 prefs_pages/general.js:13
-msgid "General"
-msgstr "సాధారణం"
-
-#: prefs.js:108 prefs_pages/general.js:15
-msgid "Notifications & Sound"
-msgstr "నోటిఫికేషన్లు & శబ్దం"
-
-#: prefs.js:110 prefs_pages/general.js:17
-msgid "Enable notifications"
-msgstr "నోటిఫికేషన్లు ప్రారంభించు"
-
-#: prefs.js:118 prefs_pages/general.js:25
-msgid "Enable sound"
-msgstr "శబ్దం ప్రారంభించు"
-
-#: prefs.js:126 prefs_pages/general.js:33
-msgid "Volume"
-msgstr "వాల్యూం"
-
-#: prefs.js:137 prefs_pages/general.js:44
-msgid "Custom sound path (relative or absolute)"
-msgstr "అనుకూల శబ్ద మార్గం (సాపేక్షం లేదా సంపూర్ణం)"
-
-#: prefs.js:146 prefs_pages/general.js:175
-msgid "Sound"
-msgstr "శబ్దం"
-
-#: prefs.js:170 prefs_pages/general.js:72
-msgid "System: complete"
-msgstr "System: complete"
-
-#: prefs.js:171 prefs_pages/general.js:73
-msgid "System: bell"
-msgstr "System: bell"
-
-#: prefs.js:172 prefs_pages/general.js:74
-msgid "System: message-new-instant"
-msgstr "System: message-new-instant"
-
-#: prefs.js:173 prefs_pages/general.js:75
-msgid "System: dialog-information"
-msgstr "System: dialog-information"
-
-#: prefs.js:174 prefs_pages/general.js:76
-msgid "System: alarm-clock-elapsed"
-msgstr "System: alarm-clock-elapsed"
-
-#: prefs.js:177 prefs.js:249 prefs_pages/general.js:79
-#: prefs_pages/general.js:135
-msgid "Custom…"
-msgstr "అనుకూలం…"
-
-#: prefs.js:212 prefs_pages/general.js:108
-msgid "Preview"
-msgstr "ముందస్తు వీక్షణ"
-
-#: prefs.js:230 prefs_pages/general.js:116
-msgid "Sound preview"
-msgstr ""
-
-#: prefs.js:255 prefs.js:296 prefs_pages/general.js:140
-msgid "Select sound file"
-msgstr "శబ్ద ఫైల్ ఎంచుకోండి"
-
-#: prefs.js:261 prefs.js:304 prefs_pages/general.js:142
-msgid "Audio"
-msgstr "ఆడియో"
-
-#: prefs.js:301
-msgid "_Cancel"
-msgstr "_రద్దు"
-
-#: prefs.js:302
-msgid "_Open"
-msgstr "_తెరవండి"
-
-#: prefs.js:347 ui/indicator.js:647 ui/indicator.js:650
-#: prefs_pages/general.js:181
-msgid "Reset"
-msgstr "రీసెట్"
-
-#: prefs.js:348 prefs_pages/general.js:182
-msgid "Restore all settings to schema defaults"
-msgstr "అన్ని అమరికలను స్కీమా డిఫాల్ట్‌లకు పునరుద్ధరించు"
-
-#: prefs.js:349 prefs_pages/general.js:183
-msgid "Restore all defaults"
-msgstr "అన్ని డిఫాల్ట్‌లను పునరుద్ధరించు"
-
-#: prefs.js:412 prefs.js:413 prefs_pages/panel.js:11 prefs_pages/panel.js:12
-msgid "Panel & Display"
-msgstr "ప్యానెల్ & ప్రదర్శన"
-
-#: prefs.js:415 prefs_pages/panel.js:14
-msgid "Panel style (icon/text/both)"
-msgstr "ప్యానెల్ శైలి (ఐకాన్/పాఠ్యం/రెండూ)"
-
-#: prefs.js:423 prefs_pages/panel.js:22
-msgid "Display format"
-msgstr "ప్రదర్శన ఆకృతి"
-
-#: prefs.js:432 prefs_pages/panel.js:30
-msgid "Position in panel"
-msgstr "ప్యానెల్‌లో స్థానం"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Left"
-msgstr "ఎడమ"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Center"
-msgstr "మధ్య"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Right"
-msgstr "కుడి"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Far left"
-msgstr "చాలా ఎడమ"
-
-#: prefs.js:433 prefs_pages/panel.js:31
-msgid "Far right"
-msgstr "చాలా కుడి"
-
-#: prefs.js:444
-msgid "Panel spacing (px)"
-msgstr "Panel spacing (px)"
-
-#: prefs.js:457 ui/indicator.js:275 ui/indicator.js:532 ui/indicator.js:673
-#: ui/indicator.js:675 prefs_pages/presets.js:11
-msgid "Presets"
-msgstr "ముందస్తులు"
-
-#: prefs.js:458 prefs_pages/presets.js:12
-msgid "Presets (comma-separated)"
-msgstr "ముందస్తులు (కామాతో వేరు చేసినవి)"
-
-#: prefs.js:459 prefs_pages/presets.js:13
-msgid ""
-"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
-msgstr ""
-"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
-
-#: prefs.js:470 prefs_pages/presets.js:20
-msgid "Save"
-msgstr "సేవ్ చేయి"
-
-#: prefs.js:493 prefs_pages/repeat.js:11
-msgid "Repetition"
-msgstr "పునరావృతం"
-
-#: prefs.js:494 prefs_pages/repeat.js:12
-msgid "Repetition on completion"
-msgstr "పూర్తయ్యిన తర్వాత పునరావృతం"
-
-#: prefs.js:496 prefs_pages/repeat.js:14
-msgid "Enable repetition"
-msgstr "పునరావృతాన్ని ప్రారంభించు"
-
-#: prefs.js:504 prefs_pages/repeat.js:22
-msgid "Repeat count"
-msgstr "పునరావృతాల సంఖ్య"
-
-#: prefs.js:510 prefs_pages/repeat.js:28
-msgid "Repeat interval (seconds)"
-msgstr "పునరావృత అంతరం (సెకన్లు)"
-
-#: ui/indicator.js:76 i18n/extra_strings.js:17
+#: ui/indicator.js:84 i18n/extra_strings.js:17
 msgid ""
 "Left: start/pause, Middle: reset, Shift+Left: last preset, Ctrl+Left: "
 "Preferences"
 msgstr "ఎడమ: ప్రారంభం/విరామం, మధ్య: రీసెట్, Shift+ఎడమ: చివరి ముందస్తు, Ctrl+ఎడమ: ప్రాధాన్యతలు"
 
-#: ui/indicator.js:79 ui/indicator.js:96
+#: ui/indicator.js:87 ui/indicator.js:102
 msgid "yrtimer indicator"
 msgstr "yrtimer సూచిక"
 
-#: ui/indicator.js:94
+#: ui/indicator.js:100
 msgid "Timer icon"
 msgstr "టైమర్ చిహ్నం"
 
-#: ui/indicator.js:95
+#: ui/indicator.js:101
 msgid "Remaining time"
 msgstr "మిగిలిన సమయం"
 
-#: ui/indicator.js:275 ui/indicator.js:533 ui/indicator.js:681
-#: ui/indicator.js:683
-msgid "Preferences"
-msgstr "ప్రాధాన్యతలు"
-
-#: ui/indicator.js:277
-msgid "[i18n probe] Preferences"
-msgstr "[i18n] ప్రాధాన్యతలు"
-
-#: ui/indicator.js:306
+#: ui/indicator.js:226
 msgid "Preset"
 msgstr "ముందస్తు"
 
-#: ui/indicator.js:359 ui/indicator.js:368
+#: ui/indicator.js:277 ui/indicator.js:285
 msgid "Timer"
 msgstr "టైమర్"
 
-#: ui/indicator.js:359 ui/indicator.js:368
+#: ui/indicator.js:277 ui/indicator.js:285
 msgid "Time is up!"
 msgstr "సమయం ముగిసింది!"
 
-#: ui/indicator.js:544
+#: ui/indicator.js:435 ui/indicator.js:551 ui/indicator.js:552
+#: prefs_pages/presets.js:22
+msgid "Presets"
+msgstr "ముందస్తులు"
+
+#: ui/indicator.js:436 ui/indicator.js:557 ui/indicator.js:558
+msgid "Preferences"
+msgstr "ప్రాధాన్యతలు"
+
+#: ui/indicator.js:446
 msgid "Enter duration (e.g., 1m 12s)"
 msgstr "వ్యవధిని నమోదు చేయండి (ఉదా., 1m 12s)"
 
-#: ui/indicator.js:546
+#: ui/indicator.js:448
 msgid "Duration input"
 msgstr "వ్యవధి ఇన్‌పుట్"
 
-#: ui/indicator.js:645 ui/indicator.js:648
+#: ui/indicator.js:525 ui/indicator.js:528
 msgid "Start"
 msgstr "ప్రారంభించు"
 
-#: ui/indicator.js:646 ui/indicator.js:649
+#: ui/indicator.js:526 ui/indicator.js:529
 msgid "Pause"
 msgstr "విరామం"
 
-#: prefs_pages/diag.js:12 prefs_pages/diag.js:15
-msgid "Diagnostics"
-msgstr "Diagnostics"
+#: ui/indicator.js:527 ui/indicator.js:530 prefs_pages/general.js:177
+msgid "Reset"
+msgstr "రీసెట్"
 
-#: prefs_pages/diag.js:17
-msgid "Enable debug logs"
-msgstr "Enable debug logs"
+#: prefs_pages/repeat.js:21
+msgid "Repetition"
+msgstr "పునరావృతం"
 
-#: prefs_pages/diag.js:26
-msgid "Override locale for preferences"
-msgstr "Override locale for preferences"
+#: prefs_pages/repeat.js:22
+msgid "Repetition on completion"
+msgstr "పూర్తయ్యిన తర్వాత పునరావృతం"
 
-#: prefs_pages/diag.js:26
-msgid "Empty = system default (restart prefs to fully apply)"
-msgstr "Empty = system default (restart prefs to fully apply)"
+#: prefs_pages/repeat.js:24
+msgid "Enable repetition"
+msgstr "పునరావృతాన్ని ప్రారంభించు"
 
-#: prefs_pages/diag.js:27 prefs_pages/diag.js:44
-msgid "System default"
-msgstr "System default"
+#: prefs_pages/repeat.js:32
+msgid "Repeat count"
+msgstr "పునరావృతాల సంఖ్య"
 
-#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
-msgid "Language changed"
-msgstr "Language changed"
+#: prefs_pages/repeat.js:38
+msgid "Repeat interval (seconds)"
+msgstr "పునరావృత అంతరం (సెకన్లు)"
 
-#: prefs_pages/diag.js:58 prefs_pages/diag.js:86
-msgid "Restarting preferences to apply translations..."
-msgstr "Restarting preferences to apply translations..."
+#: prefs_pages/general.js:26
+msgid "General"
+msgstr "సాధారణం"
 
-#: prefs_pages/diag.js:59 prefs_pages/diag.js:87 prefs_pages/diag.js:222
-msgid "OK"
-msgstr "OK"
+#: prefs_pages/general.js:27
+msgid "Notifications & Sound"
+msgstr "నోటిఫికేషన్లు & శబ్దం"
 
-#: prefs_pages/diag.js:81
-msgid "e.g., fr, de, zh_CN"
-msgstr "e.g., fr, de, zh_CN"
+#: prefs_pages/general.js:29
+msgid "Enable notifications"
+msgstr "నోటిఫికేషన్లు ప్రారంభించు"
 
-#: prefs_pages/diag.js:113 prefs_pages/diag.js:166
-msgid "Extension path"
-msgstr "Extension path"
+#: prefs_pages/general.js:37
+msgid "Enable sound"
+msgstr "శబ్దం ప్రారంభించు"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "Icon (embedded)"
-msgstr "Icon (embedded)"
+#: prefs_pages/general.js:45
+msgid "Volume"
+msgstr "వాల్యూం"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "exists"
-msgstr "exists"
+#: prefs_pages/general.js:55
+msgid "Custom sound path (relative or absolute)"
+msgstr "అనుకూల శబ్ద మార్గం (సాపేక్షం లేదా సంపూర్ణం)"
 
-#: prefs_pages/diag.js:117 prefs_pages/diag.js:190
-msgid "missing"
-msgstr "missing"
-
-#: prefs_pages/diag.js:123 prefs_pages/diag.js:196
-msgid "presets (sec)"
-msgstr "presets (sec)"
-
-#: prefs_pages/diag.js:136
-msgid "Status and environment checks (Press Refresh to update)"
-msgstr "Status and environment checks (Press Refresh to update)"
-
-#: prefs_pages/diag.js:161
-msgid "Refresh"
-msgstr "Refresh"
-
-#: prefs_pages/diag.js:172
-msgid "GNOME Shell"
-msgstr "GNOME Shell"
-
-#: prefs_pages/diag.js:182
-msgid "Extension state"
-msgstr "Extension state"
-
-#: prefs_pages/diag.js:184
-msgid "Extension info"
-msgstr "Extension info"
-
-#: prefs_pages/diag.js:210
-msgid "Copy"
-msgstr "Copy"
-
-#: prefs_pages/diag.js:221
-msgid "Diagnostics copied"
-msgstr "Diagnostics copied"
-
-#: prefs_pages/diag.js:221
-msgid "Diagnostics have been copied to the clipboard."
-msgstr "Diagnostics have been copied to the clipboard."
-
-#: prefs_pages/general.js:69
+#: prefs_pages/general.js:79
 msgid "Embedded"
 msgstr ""
 
-#: prefs_pages/general.js:81
+#: prefs_pages/general.js:82
+msgid "System: complete"
+msgstr "System: complete"
+
+#: prefs_pages/general.js:83
+msgid "System: bell"
+msgstr "System: bell"
+
+#: prefs_pages/general.js:84
+msgid "System: message-new-instant"
+msgstr "System: message-new-instant"
+
+#: prefs_pages/general.js:85
+msgid "System: dialog-information"
+msgstr "System: dialog-information"
+
+#: prefs_pages/general.js:86
+msgid "System: alarm-clock-elapsed"
+msgstr "System: alarm-clock-elapsed"
+
+#: prefs_pages/general.js:88 prefs_pages/general.js:132
+msgid "Custom…"
+msgstr "అనుకూలం…"
+
+#: prefs_pages/general.js:90
 msgid "(no sounds found)"
 msgstr ""
+
+#: prefs_pages/general.js:115
+msgid "Preview"
+msgstr "ముందస్తు వీక్షణ"
+
+#: prefs_pages/general.js:136
+msgid "Select sound file"
+msgstr "శబ్ద ఫైల్ ఎంచుకోండి"
+
+#: prefs_pages/general.js:138
+msgid "Audio"
+msgstr "ఆడియో"
+
+#: prefs_pages/general.js:171
+msgid "Sound"
+msgstr "శబ్దం"
+
+#: prefs_pages/general.js:178
+msgid "Restore all settings to schema defaults"
+msgstr "అన్ని అమరికలను స్కీమా డిఫాల్ట్‌లకు పునరుద్ధరించు"
+
+#: prefs_pages/general.js:179
+msgid "Restore all defaults"
+msgstr "అన్ని డిఫాల్ట్‌లను పునరుద్ధరించు"
+
+#: prefs_pages/presets.js:23
+msgid "Presets (comma-separated)"
+msgstr "ముందస్తులు (కామాతో వేరు చేసినవి)"
+
+#: prefs_pages/presets.js:24
+msgid ""
+"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
+msgstr ""
+"Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25"
+
+#: prefs_pages/presets.js:31
+msgid "Save"
+msgstr "సేవ్ చేయి"
+
+#: prefs_pages/panel.js:21 prefs_pages/panel.js:22
+msgid "Panel & Display"
+msgstr "ప్యానెల్ & ప్రదర్శన"
+
+#: prefs_pages/panel.js:25
+msgid "Panel style (icon/text/both)"
+msgstr "ప్యానెల్ శైలి (ఐకాన్/పాఠ్యం/రెండూ)"
+
+#: prefs_pages/panel.js:34
+msgid "Display format"
+msgstr "ప్రదర్శన ఆకృతి"
+
+#: prefs_pages/panel.js:43
+msgid "Position in panel"
+msgstr "ప్యానెల్‌లో స్థానం"
+
+#: prefs_pages/panel.js:44
+msgid "Left"
+msgstr "ఎడమ"
+
+#: prefs_pages/panel.js:44
+msgid "Center"
+msgstr "మధ్య"
+
+#: prefs_pages/panel.js:44
+msgid "Right"
+msgstr "కుడి"
+
+#: prefs_pages/panel.js:44
+msgid "Far left"
+msgstr "చాలా ఎడమ"
+
+#: prefs_pages/panel.js:44
+msgid "Far right"
+msgstr "చాలా కుడి"
+
+#: prefs_pages/panel.js:52
+msgid "Panel spacing (px)"
+msgstr "Panel spacing (px)"
