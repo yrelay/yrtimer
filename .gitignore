@@ -8,3 +8,4 @@ work/
 .last-enable
 
 dist/
+*.po~
