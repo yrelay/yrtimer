@@ -2,10 +2,21 @@
 schemas/gschemas.compiled
 *.shell-extension.zip
 
+# Distribution output
+dist/
+
 # Working directories (do not publish)
 work/
 
-.last-enable
-
-dist/
+# Editor/merge backup files
 *.po~
+*~
+*.swp
+
+# IDE/system
+.vscode/
+.idea/
+.DS_Store
+
+# i18n template (optional to ignore)
+# po/*.pot
