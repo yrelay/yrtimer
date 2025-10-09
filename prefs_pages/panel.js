@@ -2,21 +2,16 @@
 import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
-import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
+import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
 
 export function buildPanelPage(settings) {
   function _getRootPathFromMeta() {
-    try {
-      const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/panel.js
-      const dir = file.get_parent(); // prefs_pages/
-      const root = dir.get_parent(); // extension root
-      return root.get_path();
-    } catch (_) { return ''; }
+    const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/panel.js
+    const dir = file.get_parent(); // prefs_pages/
+    const root = dir.get_parent(); // extension root
+    return root.get_path();
   }
   const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
-  let _ = (s) => s;
-  try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
-  _ = ExtensionUtils.gettext;
 
   const page = new Adw.PreferencesPage({ title: _('Panel & Display'), icon_name: 'preferences-system-time-symbolic' });
   const grp = new Adw.PreferencesGroup({ title: _('Panel & Display') });

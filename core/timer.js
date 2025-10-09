@@ -131,10 +131,8 @@ export class Timer {
   }
 
   _emitChanged() {
-    try {
-      for (let i = 0; i < this._onChanged.length; i++) {
-        try { this._onChanged[i](); } catch (_) {}
-      }
-    } catch (_) {}
+    for (let i = 0; i < this._onChanged.length; i++) {
+      this._onChanged[i]();
+    }
   }
 }

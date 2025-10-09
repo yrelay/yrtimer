@@ -2,28 +2,23 @@
 import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
-import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
+import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
 
 export function buildRepeatPage(settings) {
   function _getRootPathFromMeta() {
-    try {
-      const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/repeat.js
-      const dir = file.get_parent(); // prefs_pages/
-      const root = dir.get_parent(); // extension root
-      return root.get_path();
-    } catch (_) { return ''; }
+    const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/repeat.js
+    const dir = file.get_parent(); // prefs_pages/
+    const root = dir.get_parent(); // extension root
+    return root.get_path();
   }
   const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
-  let _ = (s) => s;
-  try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
-  _ = ExtensionUtils.gettext;
 
   const pageRepeat = new Adw.PreferencesPage({ title: _('Repetition'), icon_name: 'media-playlist-repeat-symbolic' });
   const grpRepeat = new Adw.PreferencesGroup({ title: _('Repetition on completion') });
 
   const rowRepeat = new Adw.ActionRow({ title: _('Enable repetition') });
   const swRepeat = new Gtk.Switch({ valign: Gtk.Align.CENTER });
-  try { swRepeat.active = settings.get_boolean('repeat-enabled'); } catch (_) { swRepeat.active = false; }
+  swRepeat.active = settings.get_boolean('repeat-enabled');
   swRepeat.connect('notify::active', w => settings.set_boolean('repeat-enabled', w.active));
   rowRepeat.add_suffix(swRepeat);
   rowRepeat.activatable_widget = swRepeat;

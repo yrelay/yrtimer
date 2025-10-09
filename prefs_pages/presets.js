@@ -3,31 +3,24 @@ import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
 import GLib from 'gi://GLib';
 import Gio from 'gi://Gio';
-import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
+import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
 
 export function buildPresetsPage(settings) {
   function _getRootPathFromMeta() {
-    try {
-      const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/presets.js
-      const dir = file.get_parent(); // prefs_pages/
-      const root = dir.get_parent(); // extension root
-      return root.get_path();
-    } catch (_) { return ''; }
+    const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/presets.js
+    const dir = file.get_parent(); // prefs_pages/
+    const root = dir.get_parent(); // extension root
+    return root.get_path();
   }
   const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
-  let _ = (s) => s;
-  try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
-  _ = ExtensionUtils.gettext;
 
   const pagePresets = new Adw.PreferencesPage({ title: _('Presets'), icon_name: 'document-edit-symbolic' });
   const grpPresets = new Adw.PreferencesGroup({ title: _('Presets (comma-separated)') });
   const rowPresets = new Adw.ActionRow({ subtitle: _('Supports m/s suffix; bare numbers = minutes. Examples: 1s, 4m, 5m, 10, 25') });
   const entryPresets = new Gtk.Entry({ hexpand: true });
-  try {
-    const arr = settings.get_value('presets').deep_unpack(); // seconds array
-    const txt = arr.map(sec => (sec % 60 === 0 ? String(Math.round(sec / 60)) : `${sec}s`)).join(', ');
-    entryPresets.set_text(txt);
-  } catch (_) {}
+  const arr = settings.get_value('presets').deep_unpack(); // seconds array
+  const txt = arr.map(sec => (sec % 60 === 0 ? String(Math.round(sec / 60)) : `${sec}s`)).join(', ');
+  entryPresets.set_text(txt);
   const btnSavePresets = new Gtk.Button({ label: _('Save') });
   btnSavePresets.connect('clicked', () => {
     const raw = String(entryPresets.get_text() || '');

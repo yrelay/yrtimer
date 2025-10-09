@@ -5,6 +5,7 @@ EXT_ID := yrtimer@yrelay.fr
 # Output directory for packaged zips
 OUT_DIR := ./dist
 ZIP := $(OUT_DIR)/$(EXT_ID).shell-extension.zip
+DIST_DIR := $(OUT_DIR)/$(EXT_ID).shell-extension
 
 # Files and directories to include
 BASE_ITEMS := \
@@ -115,7 +116,9 @@ test:
 pack: schemas i18n-build
 	@echo "Packing GNOME Shell extension into $(OUT_DIR)..."
 	@mkdir -p $(OUT_DIR)
-	zip -r $(ZIP) $(PACK_ITEMS) -x "sounds/*.md"
+	# Remove any previously unzipped/exploded distribution directory to avoid confusion
+	rm -rf $(DIST_DIR)
+	zip -r $(ZIP) $(PACK_ITEMS) -x "sounds/*.md" "core/extensionUtilsCompat.js"
 
 install: pack
 	@echo "Installing $(ZIP)..."
@@ -158,6 +161,7 @@ local-install: schemas i18n-build
 clean:
 	@echo "Cleaning build artifacts..."
 	rm -f $(ZIP)
+	rm -rf $(DIST_DIR)
 
 
 # --- Convenience targets ---

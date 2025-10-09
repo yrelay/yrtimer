@@ -4,24 +4,19 @@ import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
-import * as ExtensionUtils from '../core/extensionUtilsCompat.js';
+import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
 
 // Do NOT import core/notifier.js here: it depends on Shell-only modules (Main/MessageTray)
 // which are unavailable in the standalone preferences process.
 
 export function buildGeneralPage(settings) {
   function _getRootPathFromMeta() {
-    try {
-      const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/general.js
-      const dir = file.get_parent(); // prefs_pages/
-      const root = dir.get_parent(); // extension root
-      return root.get_path();
-    } catch (_) { return ''; }
+    const file = Gio.File.new_for_uri(import.meta.url); // prefs_pages/general.js
+    const dir = file.get_parent(); // prefs_pages/
+    const root = dir.get_parent(); // extension root
+    return root.get_path();
   }
   const Me = { path: _getRootPathFromMeta(), metadata: { 'gettext-domain': 'yrtimer' } };
-  let _ = (s) => s;
-  try { ExtensionUtils.initTranslations(Me.metadata['gettext-domain'] || 'yrtimer'); } catch (_) {}
-  _ = ExtensionUtils.gettext;
 
   const pageGeneral = new Adw.PreferencesPage({ title: _('General'), icon_name: 'preferences-system-symbolic' });
   const grpNotify = new Adw.PreferencesGroup({ title: _('Notifications & Sound') });
@@ -62,23 +57,19 @@ export function buildGeneralPage(settings) {
 
   const soundChoices = [];
   const pushIfExists = (label, pathOrName) => {
-    try {
-      if (pathOrName.startsWith('/')) {
-        const f = Gio.File.new_for_path(pathOrName);
-        if (!f.query_exists(null)) return;
-      }
-      soundChoices.push([label, pathOrName]);
-    } catch (_) {}
-  };
-  try {
-    const dir = Gio.File.new_for_path(`${Me.path}/sounds`);
-    const enumerator = dir.enumerate_children('standard::name,standard::type', Gio.FileQueryInfoFlags.NONE, null);
-    let info;
-    while ((info = enumerator.next_file(null)) !== null) {
-      const name = info.get_name();
-      if (name.match(/\.(oga|ogg|wav)$/i)) pushIfExists(`${_('Embedded')}: ${name}`, name);
+    if (pathOrName.startsWith('/')) {
+      const f = Gio.File.new_for_path(pathOrName);
+      if (!f.query_exists(null)) return;
     }
-  } catch (_) {}
+    soundChoices.push([label, pathOrName]);
+  };
+  const dir = Gio.File.new_for_path(`${Me.path}/sounds`);
+  const enumerator = dir.enumerate_children('standard::name,standard::type', Gio.FileQueryInfoFlags.NONE, null);
+  let info;
+  while ((info = enumerator.next_file(null)) !== null) {
+    const name = info.get_name();
+    if (name.match(/\.(oga|ogg|wav)$/i)) pushIfExists(`${_('Embedded')}: ${name}`, name);
+  }
   pushIfExists(_('System: complete'), '/usr/share/sounds/freedesktop/stereo/complete.oga');
   pushIfExists(_('System: bell'), '/usr/share/sounds/freedesktop/stereo/bell.oga');
   pushIfExists(_('System: message-new-instant'), '/usr/share/sounds/freedesktop/stereo/message-new-instant.oga');
@@ -115,54 +106,48 @@ export function buildGeneralPage(settings) {
   const btnPlay = new Gtk.Button({ label: _('Preview') });
   btnPlay.connect('clicked', () => {
     // CLI-only playback for preferences (no Shell APIs here)
-    try {
-      const file = settings.get_string('default-sound') || 'bell.oga';
-      const path = file.startsWith('/') ? file : `${Me.path}/sounds/${file}`;
-      const exists = p => { try { return Gio.File.new_for_path(p).query_exists(null); } catch (_) { return false; } };
-      const inPath = prog => { try { return GLib.find_program_in_path(prog) !== null; } catch (_) { return false; } };
-      const spawn = cmd => { try { GLib.spawn_command_line_async(cmd); return true; } catch (_) { return false; } };
-      if (inPath('canberra-gtk-play') && exists(path) && spawn(`canberra-gtk-play -f "${path}"`)) return;
-      if (inPath('canberra-gtk-play') && spawn('canberra-gtk-play -i complete')) return;
-      if (inPath('paplay') && exists(path) && spawn(`paplay "${path}"`)) return;
-      if (inPath('paplay') && spawn('paplay /usr/share/sounds/freedesktop/stereo/complete.oga')) return;
-      if (inPath('gst-play-1.0') && exists(path) && spawn(`gst-play-1.0 --quiet "${path}"`)) return;
-      if (inPath('gst-launch-1.0') && spawn('gst-launch-1.0 -q audiotestsrc num-buffers=100 ! audioresample ! autoaudiosink')) return;
-    } catch (_) {}
+    const file = settings.get_string('default-sound') || 'bell.oga';
+    const path = file.startsWith('/') ? file : `${Me.path}/sounds/${file}`;
+    const exists = p => Gio.File.new_for_path(p).query_exists(null);
+    const inPath = prog => GLib.find_program_in_path(prog) !== null;
+    const spawn = cmd => { GLib.spawn_command_line_async(cmd); return true; };
+    if (inPath('canberra-gtk-play') && exists(path) && spawn(`canberra-gtk-play -f "${path}"`)) return;
+    if (inPath('canberra-gtk-play') && spawn('canberra-gtk-play -i complete')) return;
+    if (inPath('paplay') && exists(path) && spawn(`paplay "${path}"`)) return;
+    if (inPath('paplay') && spawn('paplay /usr/share/sounds/freedesktop/stereo/complete.oga')) return;
+    if (inPath('gst-play-1.0') && exists(path) && spawn(`gst-play-1.0 --quiet "${path}"`)) return;
+    if (inPath('gst-launch-1.0') && spawn('gst-launch-1.0 -q audiotestsrc num-buffers=100 ! audioresample ! autoaudiosink')) return;
   });
   const btnCustom = new Gtk.Button({ label: _('Custom…') });
   btnCustom.set_sensitive(true);
   btnCustom.connect('clicked', () => {
-    try {
-      const chooser = new Gtk.FileChooserNative({ title: _('Select sound file'), action: Gtk.FileChooserAction.OPEN, transient_for: null, modal: true });
-      const filter = new Gtk.FileFilter();
-      filter.set_name(_('Audio'));
-      filter.add_mime_type('audio/x-vorbis+ogg');
-      filter.add_mime_type('audio/ogg');
-      filter.add_mime_type('audio/x-wav');
-      filter.add_pattern('*.oga');
-      filter.add_pattern('*.ogg');
-      filter.add_pattern('*.wav');
-      chooser.add_filter(filter);
-      chooser.connect('response', (dlg, resp) => {
-        if (resp === Gtk.ResponseType.ACCEPT) {
-          const file = dlg.get_file();
-          if (!file) return;
-          const path = file.get_path();
-          let toStore = path;
-          try {
-            const soundsDir = `${Me.path}/sounds/`;
-            if (path && path.startsWith(soundsDir)) toStore = path.substring(soundsDir.length);
-          } catch (_) {}
-          settings.set_string('default-sound', toStore);
-          entrySound.set_text(toStore);
-          rowDefSound.set_visible(true);
-          const idx = soundChoices.findIndex(([_, v]) => v === '__custom__');
-          if (idx >= 0) dd.set_selected(idx);
-        }
-        try { dlg.destroy(); } catch (_) {}
-      });
-      chooser.show();
-    } catch (_) {}
+    const chooser = new Gtk.FileChooserNative({ title: _('Select sound file'), action: Gtk.FileChooserAction.OPEN, transient_for: null, modal: true });
+    const filter = new Gtk.FileFilter();
+    filter.set_name(_('Audio'));
+    filter.add_mime_type('audio/x-vorbis+ogg');
+    filter.add_mime_type('audio/ogg');
+    filter.add_mime_type('audio/x-wav');
+    filter.add_pattern('*.oga');
+    filter.add_pattern('*.ogg');
+    filter.add_pattern('*.wav');
+    chooser.add_filter(filter);
+    chooser.connect('response', (dlg, resp) => {
+      if (resp === Gtk.ResponseType.ACCEPT) {
+        const file = dlg.get_file();
+        if (!file) return;
+        const path = file.get_path();
+        let toStore = path;
+        const soundsDir = `${Me.path}/sounds/`;
+        if (path && path.startsWith(soundsDir)) toStore = path.substring(soundsDir.length);
+        settings.set_string('default-sound', toStore);
+        entrySound.set_text(toStore);
+        rowDefSound.set_visible(true);
+        const idx = soundChoices.findIndex(([_, v]) => v === '__custom__');
+        if (idx >= 0) dd.set_selected(idx);
+      }
+      dlg.destroy();
+    });
+    chooser.show();
   });
   const soundBox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL, spacing: 6 });
   soundBox.append(dd);
@@ -183,7 +168,7 @@ export function buildGeneralPage(settings) {
       'panel-style', 'display-format', 'position-in-panel', 'panel-spacing',
       'presets', 'repeat-enabled', 'repeat-count', 'repeat-interval-seconds',
     ];
-    keys.forEach(k => { try { settings.reset(k); } catch (_) {} });
+    keys.forEach(k => { settings.reset(k); });
     swNotif.active = settings.get_boolean('enable-notification');
     swSound.active = settings.get_boolean('enable-sound');
     scaleVolume.set_value(settings.get_int('volume'));
