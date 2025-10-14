@@ -30,8 +30,9 @@ log('[yrtimer] indicator.js loaded (ESM)');
 
 export const Indicator = GObject.registerClass(
 class Indicator extends PanelMenu.Button {
-  _init() {
+  _init(extension) {
     super._init(0.0, 'yrtimer');
+    this._extension = extension;
     this._baseDirPath = Me.path;
     log('[yrtimer] Indicator: constructor start');
 
@@ -132,7 +133,7 @@ class Indicator extends PanelMenu.Button {
         const CTRL = Clutter.ModifierType.CONTROL_MASK;
         const SHIFT = Clutter.ModifierType.SHIFT_MASK;
         if (st & CTRL) {
-          Gio.Subprocess.new(['gnome-extensions', 'prefs', 'yrtimer@yrelay.fr'], Gio.SubprocessFlags.NONE).init(null);
+          this._extension.openPreferences();
           return Clutter.EVENT_STOP;
         }
         if (st & SHIFT) {
@@ -173,7 +174,7 @@ class Indicator extends PanelMenu.Button {
     this._openingPrefs = true;
     if (this.menu && this.menu.close) this.menu.close();
     GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
-      GLib.spawn_command_line_async('gnome-extensions prefs yrtimer@yrelay.fr');
+      this._extension.openPreferences();
       this._openingPrefs = false;
       return GLib.SOURCE_REMOVE;
     });

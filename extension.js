@@ -27,7 +27,7 @@ export default class ExtensionImpl extends Extension {
       if (!style || style === '') this._settings.set_string('panel-style', 'both');
     }
 
-    this._indicator = IndicatorCtor ? new IndicatorCtor() : null;
+    this._indicator = IndicatorCtor ? new IndicatorCtor(this) : null;
     if (this._indicator) {
       GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
         this._indicator.addToPanel();
@@ -43,5 +43,6 @@ export default class ExtensionImpl extends Extension {
       this._indicator.destroy();
       this._indicator = null;
     }
+    this._settings = null;
   }
 }
