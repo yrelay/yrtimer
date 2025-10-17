@@ -7,7 +7,7 @@ import Gio from 'gi://Gio';
 import GObject from 'gi://GObject';
 import Gdk from 'gi://Gdk';
 import GLib from 'gi://GLib';
-import { ExtensionPreferences, gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
+import { ExtensionPreferences, gettext as _ } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 import { buildGeneralPage } from './prefs_pages/general.js';
 import { buildPanelPage } from './prefs_pages/panel.js';

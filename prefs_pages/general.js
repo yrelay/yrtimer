@@ -4,7 +4,7 @@ import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
-import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
+import { gettext as _ } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 // Do NOT import core/notifier.js here: it depends on Shell-only modules (Main/MessageTray)
 // which are unavailable in the standalone preferences process.
